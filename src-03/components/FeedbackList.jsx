@@ -1,7 +1,7 @@
 import FeedbackItem from './FeedbackItem'
-import PropTypes from 'prop-types'
 
 function FeedbackList({ feedback }) {
+  // feedback is coming from App Level state
   console.log(feedback)
 
   if (!feedback || feedback.length === 0) {
@@ -11,6 +11,7 @@ function FeedbackList({ feedback }) {
   return (
     <div className='feedback-list'>
       {feedback.map((item) => (
+        // <div>{item.rating}</div>
         <FeedbackItem
           key={item.id}
           item={item}
@@ -18,16 +19,6 @@ function FeedbackList({ feedback }) {
       ))}
     </div>
   )
-}
-
-FeedbackList.propTypes = {
-  feedback: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      text: PropTypes.string.isRequired,
-      rating: PropTypes.number.isRequired,
-    })
-  ),
 }
 
 export default FeedbackList
