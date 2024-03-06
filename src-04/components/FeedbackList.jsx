@@ -1,3 +1,6 @@
+// Prop drilling
+// Adding icon and deleting item from feedback list
+
 import FeedbackItem from './FeedbackItem'
 import PropTypes from 'prop-types'
 
@@ -14,6 +17,8 @@ function FeedbackList({ feedback, handleDelete }) {
         <FeedbackItem
           key={item.id}
           item={item}
+          // handleDelete={(id) => console.log(id)}
+
           handleDelete={handleDelete} // passed up to Apps
         />
       ))}
