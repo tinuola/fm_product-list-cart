@@ -18,12 +18,14 @@ export const FeedbackProvider = ({ children }) => {
 
   const addFeedback = (newFeedback) => {
     newFeedback.id = uuidv4()
+    // console.log(newFeedback)
     setFeedback([newFeedback, ...feedback])
   }
 
   return (
     <FeedbackContext.Provider value={{ feedback, deleteFeedback, addFeedback }}>
       {children}
+
       {/* components that need access to context */}
     </FeedbackContext.Provider>
   )

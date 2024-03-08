@@ -4,7 +4,7 @@ import Card from './shared/Card'
 import RatingSelect from './RatingSelect'
 import FeedbackContext from '../context/FeedbackContext'
 
-function FeedbackForm() {
+function FeedbackForm(/*{ handleAdd }*/) {
   const [text, setText] = useState('') // For form input
   const [rating, setRating] = useState(10)
   const [btnDisabled, setBtnDisabled] = useState(true)
@@ -37,6 +37,8 @@ function FeedbackForm() {
         text,
         rating,
       }
+      // console.log(newFeedback)
+      // handleAdd(newFeedback)
       addFeedback(newFeedback)
       setText('')
     }
