@@ -1,0 +1,32 @@
+:root {
+  --var: value;
+}
+
+/***********/
+/* Section */
+/***********/
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  /* grid-template-rows: 1fr auto; */
+  justify-items: center;
+  align-items: center;
+  background-image: url('../assets/images/');
+}
+
+.fm-byline-text {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.fm-byline-text,
+.fm-byline-text a {
+}
+
+/*****************/
+/* Media Queries */
+/*****************/
+@media only screen and (min-width: 800px) {
+}
