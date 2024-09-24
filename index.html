@@ -55,44 +55,125 @@
     <title>Product List with Cart | Frontend Mentor</title>
   </head>
   <body>
-    <div class="container">
+    <div class="site-wrapper">
       <header>
         <a
           href="#main"
           class="skip"
           >Skip to main content</a
         >
-        <h1>Project Name - A Frontend Mentor Project</h1>
+        <h1 class="sr-only">Product List Cart - A Frontend Mentor Project</h1>
       </header>
+
+      <!--  -->
       <main id="main">
-        Desserts
-        <br />
-        Waffle with Berries Waffle 6.50 Add to Cart
-        <br />
-        Vanilla Bean Crème Brûlée Crème Brûlée 7.00 Add to Cart
-        <br />
-        Macaron Mix of Five Macaron 8.00 Add to Cart
-        <br />
-        Classic Tiramisu Tiramisu 5.50 Add to Cart
-        <br />
-        Pistachio Baklava Baklava 4.00 Add to Cart
-        <br />
-        Lemon Meringue Pie Pie 5.00 Add to Cart
-        <br />
-        Red Velvet Cake Cake 4.50 Add to Cart
-        <br />
-        Salted Caramel Brownie Brownie 4.50 Add to Cart
-        <br />
-        Vanilla Panna Cotta Panna Cotta 6.50 Add to Cart
-        <br />
-        Your Cart (<!-- Quantity -->)
-        <br />
-        Your added items will appear here
-        <img
-          src="assets/images/"
-          alt=""
-        />
+        <div class="app-view">
+          <!-- Product Grid -->
+          <section class="product-grid">
+            <h2>Dessert</h2>
+            <ul class="product-cards-list">
+              <li class="product-card-wrapper">
+                <div class="product-image-wrapper">
+                  <img
+                    src="assets/images/image-waffle-desktop.jpg"
+                    alt=""
+                  />
+                </div>
+                <!-- Button -->
+                <div>
+                  <button class="add-to-cart">Add to Cart</button>
+                  <div class="selection-btn-group">
+                    <button class="btn btn-decrease-qty">-</button>
+                    <span>1</span>
+                    <button class="btn btn-increase-qty">+</button>
+                  </div>
+                </div>
+                <div class="product-card-content">
+                  <p class="product-category">Waffle</p>
+                  <p class="product-name">Waffle with Berries</p>
+                  <p class="product-price">$6.50</p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- CheckOut -->
+          <section class="checkout-panel">
+            <h3>Your Cart(<span>0</span>)</h3>
+            <div class="checkout-panel__empty">
+              <img
+                src="assets/images/illustration-empty-cart.svg"
+                alt=""
+              />
+              <p>Your added items will appear here.</p>
+            </div>
+            <div class="checkout-panel__active">
+              <ul>
+                <div class="checkout-item-row">
+                  <div class="checkout-content">
+                    <p>Classic Tiramisu</p>
+                    <div>
+                      <span><span>1</span>x</span>
+                      <span><span>@$</span>5.50</span>
+                      <span><span>$</span>5.50</span>
+                    </div>
+                  </div>
+                  <div class="checkout-cancel">
+                    <img
+                      src="assets/images/icon-remove-item.svg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </ul>
+              <div class="checkout-calculation">
+                <p>Order Total</p>
+                <p><span>$</span>46.50</p>
+              </div>
+              <div class="green-message">This is a carbon-neutral delivery</div>
+              <button class="checkout-btn">Confirm Order</button>
+            </div>
+          </section>
+        </div>
+
+        <!-- Confirmation Modal -->
+        <dialog
+          class="confirmation-modal"
+          open
+        >
+          <div class="confirmation-icon-wrapper">
+            <img
+              src="/assets/images/icon-order-confirmed.svg"
+              alt=""
+            />
+          </div>
+          <h2>Order Confirmed</h2>
+          <p>We hope you enjoy your food!</p>
+          <ul class="confirmed-items-list">
+            <li class="confirmed-item-wrapper">
+              <div>
+                <div class="confirmed-item-image-wrapper">
+                  <img
+                    src="assets/images/image-tiramisu-thumbnail.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <p>Classic Tiramisu</p>
+                  <div>
+                    <span><span>1</span>x</span>
+                    <span>@$<span>5.50</span></span>
+                  </div>
+                </div>
+                <div>$<span>5.50</span></div>
+              </div>
+            </li>
+          </ul>
+          <button class="new-order-btn">Start New Order</button>
+        </dialog>
       </main>
+
+      <!--  -->
       <footer class="fm-byline">
         <p class="fm-byline-text">
           Challenge by
