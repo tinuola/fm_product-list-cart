@@ -65,27 +65,38 @@
         <h1 class="sr-only">Product List Cart - A Frontend Mentor Project</h1>
       </header>
 
-      <!--  -->
       <main id="main">
         <div class="app-view">
           <!-- Product Grid -->
           <section class="product-grid">
-            <h2>Dessert</h2>
-            <ul class="product-cards-list">
-              <li class="product-card-wrapper">
-                <div class="product-image-wrapper">
+            <h2 class="product-grid-title">Dessert</h2>
+
+            <!-- Product items -->
+            <ul class="product-items-list">
+              <li class="product-item-card">
+                <div class="product-card-image-wrapper">
                   <img
                     src="assets/images/image-waffle-desktop.jpg"
-                    alt=""
+                    alt="Waffles with strawberries"
                   />
                 </div>
-                <!-- Button -->
-                <div>
-                  <button class="add-to-cart">Add to Cart</button>
-                  <div class="selection-btn-group">
-                    <button class="btn btn-decrease-qty">-</button>
-                    <span>1</span>
-                    <button class="btn btn-increase-qty">+</button>
+                <!-- Selection buttons -->
+                <div class="product-card-btns-group">
+                  <button class="btn__add-to-cart">Add to Cart</button>
+                  <div class="quantity-btns-wrapper">
+                    <button class="btn__decrease-qty">
+                      <img
+                        src="assets/images/icon-decrement-quantity.svg"
+                        alt="Decrease quantity by 1"
+                      />
+                    </button>
+                    <span class="product-card__selected-qty">1</span>
+                    <button class="btn__increase-qty">
+                      <img
+                        src="assets/images/icon-increment-quantity.svg"
+                        alt="Increase quantity by 1"
+                      />
+                    </button>
                   </div>
                 </div>
                 <div class="product-card-content">
@@ -97,41 +108,51 @@
             </ul>
           </section>
 
-          <!-- CheckOut -->
+          <!-- Checkout -->
           <section class="checkout-panel">
-            <h3>Your Cart(<span>0</span>)</h3>
-            <div class="checkout-panel__empty">
-              <img
-                src="assets/images/illustration-empty-cart.svg"
-                alt=""
-              />
+            <h3 class="checkout-panel-title">
+              Your Cart(<span class="checkout__total-qty">0</span>)
+            </h3>
+            <div class="checkout-panel-empty">
+              <div class="checkout-panel-empty-image-wrapper">
+                <img
+                  src="assets/images/illustration-empty-cart.svg"
+                  alt=""
+                />
+              </div>
               <p>Your added items will appear here.</p>
             </div>
-            <div class="checkout-panel__active">
-              <ul>
-                <div class="checkout-item-row">
-                  <div class="checkout-content">
+            <div class="checkout-panel-active">
+              <ul class="checkout-items-list">
+                <li class="checkout-item">
+                  <div class="checkout-item-body">
                     <p>Classic Tiramisu</p>
-                    <div>
-                      <span><span>1</span>x</span>
-                      <span><span>@$</span>5.50</span>
-                      <span><span>$</span>5.50</span>
+                    <div class="checkout-item-data">
+                      <span class="checkout-item-qty"><span>1</span>x</span>
+                      <span class="checkout-item-price"
+                        ><span>@$</span>5.50</span
+                      >
+                      <span class="checkout-item-total-price"
+                        ><span>$</span>5.50</span
+                      >
                     </div>
                   </div>
-                  <div class="checkout-cancel">
+                  <div class="checkout-item-cancel-icon">
                     <img
                       src="assets/images/icon-remove-item.svg"
                       alt=""
                     />
                   </div>
-                </div>
+                </li>
               </ul>
-              <div class="checkout-calculation">
-                <p>Order Total</p>
-                <p><span>$</span>46.50</p>
+              <div class="final-calc">
+                <p class="final-calc-text">Order Total</p>
+                <p class="final-calc-amount"><span>$</span>46.50</p>
               </div>
-              <div class="green-message">This is a carbon-neutral delivery</div>
-              <button class="checkout-btn">Confirm Order</button>
+              <div class="checkout--submessage">
+                This is a carbon-neutral delivery
+              </div>
+              <button class="btn__order-confirmation">Confirm Order</button>
             </div>
           </section>
         </div>
@@ -150,35 +171,38 @@
           <h2>Order Confirmed</h2>
           <p>We hope you enjoy your food!</p>
           <ul class="confirmed-items-list">
-            <li class="confirmed-item-wrapper">
-              <div>
-                <div class="confirmed-item-image-wrapper">
-                  <img
-                    src="assets/images/image-tiramisu-thumbnail.jpg"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <p>Classic Tiramisu</p>
-                  <div>
-                    <span><span>1</span>x</span>
-                    <span>@$<span>5.50</span></span>
-                  </div>
-                </div>
-                <div>$<span>5.50</span></div>
+            <li class="confirmed-item">
+              <!-- <div class="confirmed-item-wrapper"> -->
+              <div class="confirmed-item-image-wrapper">
+                <img
+                  src="assets/images/image-tiramisu-thumbnail.jpg"
+                  alt=""
+                />
               </div>
+              <div class="confirmed-item-body">
+                <p>Classic Tiramisu</p>
+                <div class="confirmed-item-data">
+                  <span class="confirmed-item-qty"><span>1</span>x</span>
+                  <span class="confirmed-item-price">@$<span>5.50</span></span>
+                </div>
+              </div>
+              <div class="confirmed-item-total-price">$<span>5.50</span></div>
+              <!-- </div> -->
             </li>
           </ul>
-          <button class="new-order-btn">Start New Order</button>
+          <div class="final-calc">
+            <p class="final-calc-text">Order Total</p>
+            <p class="final-calc-amount"><span>$</span>46.50</p>
+          </div>
+          <button class="btn_new-order">Start New Order</button>
         </dialog>
       </main>
 
-      <!--  -->
       <footer class="fm-byline">
         <p class="fm-byline-text">
           Challenge by
           <a
-            href=""
+            href="https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d"
             target="_blank"
             >Frontend Mentor</a
           >
@@ -186,7 +210,7 @@
         <p class="fm-byline-text">
           Coded by
           <a
-            href=""
+            href="https://github.com/tinuola/fm_product-list-cart"
             target="_blank"
             >TechTinu</a
           >
