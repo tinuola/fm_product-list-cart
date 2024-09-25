@@ -73,16 +73,170 @@
 
             <!-- Product items -->
             <ul class="product-items-list">
+              <!-- product 1 -->
               <li class="product-item-card">
                 <div class="product-card-image-wrapper">
-                  <img
-                    src="assets/images/image-waffle-desktop.jpg"
-                    alt="Waffles with strawberries"
-                  />
+                  <picture>
+                    <!-- <source
+                      media="(min-width: 1200px)"
+                      srcset="
+                        assets/images/image-waffle-desktop.jpg 502w,
+                        assets/images/image-waffle-tablet.jpg  427w,
+                        assets/images/image-waffle-mobile.jpg  654w
+                      "
+                    /> -->
+                    <source
+                      media="(min-width: 1200px)"
+                      srcset="assets/images/image-waffle-desktop.jpg"
+                    />
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="assets/images/image-waffle-tablet.jpg"
+                    />
+                    <source
+                      media="(min-width: 320px)"
+                      srcset="assets/images/image-waffle-mobile.jpg"
+                    />
+                    <img
+                      src="assets/images/image-waffle-desktop.jpg"
+                      alt="Waffles with strawberries"
+                      width="502"
+                      height="480"
+                    />
+                  </picture>
                 </div>
                 <!-- Selection buttons -->
                 <div class="product-card-btns-group">
-                  <button class="btn__add-to-cart">Add to Cart</button>
+                  <button class="btn__add-to-cart">
+                    <img
+                      src="assets/images/icon-add-to-cart.svg"
+                      alt=""
+                    />Add to Cart
+                  </button>
+                  <div class="quantity-btns-wrapper">
+                    <button class="btn__decrease-qty">
+                      <img
+                        src="assets/images/icon-decrement-quantity.svg"
+                        alt="Decrease quantity by 1"
+                      />
+                    </button>
+                    <span class="product-card__selected-qty">1</span>
+                    <button class="btn__increase-qty">
+                      <img
+                        src="assets/images/icon-increment-quantity.svg"
+                        alt="Increase quantity by 1"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div class="product-card-content">
+                  <p class="product-category">Waffle</p>
+                  <p class="product-name">Waffle with Berries</p>
+                  <p class="product-price">$6.50</p>
+                </div>
+              </li>
+              <!-- product 2 -->
+              <li class="product-item-card">
+                <div class="product-card-image-wrapper">
+                  <picture>
+                    <!-- <source
+                      media="(min-width: 1200px)"
+                      srcset="
+                        assets/images/image-waffle-desktop.jpg 502w,
+                        assets/images/image-waffle-tablet.jpg  427w,
+                        assets/images/image-waffle-mobile.jpg  654w
+                      "
+                    /> -->
+                    <source
+                      media="(min-width: 1200px)"
+                      srcset="assets/images/image-waffle-desktop.jpg"
+                    />
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="assets/images/image-waffle-tablet.jpg"
+                    />
+                    <source
+                      media="(min-width: 320px)"
+                      srcset="assets/images/image-waffle-mobile.jpg"
+                    />
+                    <img
+                      src="assets/images/image-waffle-desktop.jpg"
+                      alt="Waffles with strawberries"
+                      width="502"
+                      height="480"
+                    />
+                  </picture>
+                </div>
+                <!-- Selection buttons -->
+                <div class="product-card-btns-group">
+                  <button class="btn__add-to-cart">
+                    <img
+                      src="assets/images/icon-add-to-cart.svg"
+                      alt=""
+                    />Add to Cart
+                  </button>
+                  <div class="quantity-btns-wrapper">
+                    <button class="btn__decrease-qty">
+                      <img
+                        src="assets/images/icon-decrement-quantity.svg"
+                        alt="Decrease quantity by 1"
+                      />
+                    </button>
+                    <span class="product-card__selected-qty">1</span>
+                    <button class="btn__increase-qty">
+                      <img
+                        src="assets/images/icon-increment-quantity.svg"
+                        alt="Increase quantity by 1"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div class="product-card-content">
+                  <p class="product-category">Waffle</p>
+                  <p class="product-name">Waffle with Berries</p>
+                  <p class="product-price">$6.50</p>
+                </div>
+              </li>
+              <!-- product 3 -->
+              <li class="product-item-card">
+                <div class="product-card-image-wrapper">
+                  <picture>
+                    <!-- <source
+                      media="(min-width: 1200px)"
+                      srcset="
+                        assets/images/image-waffle-desktop.jpg 502w,
+                        assets/images/image-waffle-tablet.jpg  427w,
+                        assets/images/image-waffle-mobile.jpg  654w
+                      "
+                    /> -->
+                    <source
+                      media="(min-width: 1200px)"
+                      srcset="assets/images/image-waffle-desktop.jpg"
+                    />
+                    <source
+                      media="(min-width: 768px)"
+                      srcset="assets/images/image-waffle-tablet.jpg"
+                    />
+                    <source
+                      media="(min-width: 320px)"
+                      srcset="assets/images/image-waffle-mobile.jpg"
+                    />
+                    <img
+                      src="assets/images/image-waffle-desktop.jpg"
+                      alt="Waffles with strawberries"
+                      width="502"
+                      height="480"
+                    />
+                  </picture>
+                </div>
+                <!-- Selection buttons -->
+                <div class="product-card-btns-group">
+                  <button class="btn__add-to-cart">
+                    <img
+                      src="assets/images/icon-add-to-cart.svg"
+                      alt=""
+                    />Add to Cart
+                  </button>
                   <div class="quantity-btns-wrapper">
                     <button class="btn__decrease-qty">
                       <img
@@ -124,6 +278,49 @@
             </div>
             <div class="checkout-panel-active">
               <ul class="checkout-items-list">
+                <!-- item 1 -->
+                <li class="checkout-item">
+                  <div class="checkout-item-body">
+                    <p>Classic Tiramisu</p>
+                    <div class="checkout-item-data">
+                      <span class="checkout-item-qty"><span>1</span>x</span>
+                      <span class="checkout-item-price"
+                        ><span>@$</span>5.50</span
+                      >
+                      <span class="checkout-item-total-price"
+                        ><span>$</span>5.50</span
+                      >
+                    </div>
+                  </div>
+                  <div class="checkout-item-cancel-icon">
+                    <img
+                      src="assets/images/icon-remove-item.svg"
+                      alt=""
+                    />
+                  </div>
+                </li>
+                <!-- item 2 -->
+                <li class="checkout-item">
+                  <div class="checkout-item-body">
+                    <p>Classic Tiramisu</p>
+                    <div class="checkout-item-data">
+                      <span class="checkout-item-qty"><span>1</span>x</span>
+                      <span class="checkout-item-price"
+                        ><span>@$</span>5.50</span
+                      >
+                      <span class="checkout-item-total-price"
+                        ><span>$</span>5.50</span
+                      >
+                    </div>
+                  </div>
+                  <div class="checkout-item-cancel-icon">
+                    <img
+                      src="assets/images/icon-remove-item.svg"
+                      alt=""
+                    />
+                  </div>
+                </li>
+                <!-- item 3 -->
                 <li class="checkout-item">
                   <div class="checkout-item-body">
                     <p>Classic Tiramisu</p>
@@ -171,6 +368,45 @@
           <h2>Order Confirmed</h2>
           <p>We hope you enjoy your food!</p>
           <ul class="confirmed-items-list">
+            <!-- item 1 -->
+            <li class="confirmed-item">
+              <!-- <div class="confirmed-item-wrapper"> -->
+              <div class="confirmed-item-image-wrapper">
+                <img
+                  src="assets/images/image-tiramisu-thumbnail.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="confirmed-item-body">
+                <p>Classic Tiramisu</p>
+                <div class="confirmed-item-data">
+                  <span class="confirmed-item-qty"><span>1</span>x</span>
+                  <span class="confirmed-item-price">@$<span>5.50</span></span>
+                </div>
+              </div>
+              <div class="confirmed-item-total-price">$<span>5.50</span></div>
+              <!-- </div> -->
+            </li>
+            <!-- item 2 -->
+            <li class="confirmed-item">
+              <!-- <div class="confirmed-item-wrapper"> -->
+              <div class="confirmed-item-image-wrapper">
+                <img
+                  src="assets/images/image-tiramisu-thumbnail.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="confirmed-item-body">
+                <p>Classic Tiramisu</p>
+                <div class="confirmed-item-data">
+                  <span class="confirmed-item-qty"><span>1</span>x</span>
+                  <span class="confirmed-item-price">@$<span>5.50</span></span>
+                </div>
+              </div>
+              <div class="confirmed-item-total-price">$<span>5.50</span></div>
+              <!-- </div> -->
+            </li>
+            <!-- item 3 -->
             <li class="confirmed-item">
               <!-- <div class="confirmed-item-wrapper"> -->
               <div class="confirmed-item-image-wrapper">
