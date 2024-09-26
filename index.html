@@ -112,13 +112,13 @@
                 </div>
                 <!-- Selection buttons -->
                 <div class="product-card-btns-group">
-                  <button class="btn btn__add-to-cart">
+                  <button class="btn--sm btn__add-to-cart">
                     <img
                       src="assets/images/icon-add-to-cart.svg"
                       alt=""
                     /><span>Add to Cart</span>
                   </button>
-                  <button class="btn btn__quantity">
+                  <button class="btn--sm btn__quantity">
                     <span class="btn__decrease-qty"
                       ><img
                         src="assets/images/icon-decrement-quantity.svg"
@@ -179,13 +179,13 @@
                 </div>
                 <!-- Selection buttons -->
                 <div class="product-card-btns-group">
-                  <button class="btn btn__add-to-cart">
+                  <button class="btn--sm btn__add-to-cart">
                     <img
                       src="assets/images/icon-add-to-cart.svg"
                       alt=""
                     /><span>Add to Cart</span>
                   </button>
-                  <button class="btn btn__quantity">
+                  <button class="btn--sm btn__quantity">
                     <span class="btn__decrease-qty"
                       ><img
                         src="assets/images/icon-decrement-quantity.svg"
@@ -246,13 +246,13 @@
                 </div>
                 <!-- Selection buttons -->
                 <div class="product-card-btns-group">
-                  <button class="btn btn__add-to-cart">
+                  <button class="btn--sm btn__add-to-cart">
                     <img
                       src="assets/images/icon-add-to-cart.svg"
                       alt=""
                     /><span>Add to Cart</span>
                   </button>
-                  <button class="btn btn__quantity">
+                  <button class="btn--sm btn__quantity">
                     <span class="btn__decrease-qty"
                       ><img
                         src="assets/images/icon-decrement-quantity.svg"
@@ -305,15 +305,15 @@
               <p>Your added items will appear here.</p>
             </div>
             <div class="checkout-panel-active">
-              <ul class="checkout-items-list">
+              <ul class="checkout-items-list u-flex">
                 <!-- item 1 -->
-                <li class="checkout-item">
+                <li class="checkout-item u-flex">
                   <div class="checkout-item-body">
                     <p>Classic Tiramisu</p>
-                    <div class="checkout-item-data">
+                    <div class="checkout-item-data u-flex">
                       <span class="checkout-item-qty"><span>1</span>x</span>
                       <span class="checkout-item-price"
-                        ><span>@$</span>5.50</span
+                        ><span>@</span> <span>$</span>5.50</span
                       >
                       <span class="checkout-item-total-price"
                         ><span>$</span>5.50</span
@@ -328,13 +328,13 @@
                   </div>
                 </li>
                 <!-- item 2 -->
-                <li class="checkout-item">
+                <li class="checkout-item u-flex">
                   <div class="checkout-item-body">
                     <p>Classic Tiramisu</p>
-                    <div class="checkout-item-data">
+                    <div class="checkout-item-data u-flex">
                       <span class="checkout-item-qty"><span>1</span>x</span>
                       <span class="checkout-item-price"
-                        ><span>@$</span>5.50</span
+                        ><span>@</span> <span>$</span>5.50</span
                       >
                       <span class="checkout-item-total-price"
                         ><span>$</span>5.50</span
@@ -349,13 +349,13 @@
                   </div>
                 </li>
                 <!-- item 3 -->
-                <li class="checkout-item">
+                <li class="checkout-item u-flex">
                   <div class="checkout-item-body">
                     <p>Classic Tiramisu</p>
-                    <div class="checkout-item-data">
+                    <div class="checkout-item-data u-flex u-flex">
                       <span class="checkout-item-qty"><span>1</span>x</span>
                       <span class="checkout-item-price"
-                        ><span>@$</span>5.50</span
+                        ><span>@</span> <span>$</span>5.50</span
                       >
                       <span class="checkout-item-total-price"
                         ><span>$</span>5.50</span
@@ -370,14 +370,16 @@
                   </div>
                 </li>
               </ul>
-              <div class="final-calc">
-                <p class="final-calc-text">Order Total</p>
-                <p class="final-calc-amount"><span>$</span>46.50</p>
+              <div class="checkout-final-calc u-flex">
+                <p class="checkout-final-calc-text">Order Total</p>
+                <p class="checkout-final-calc-amount"><span>$</span>46.50</p>
               </div>
               <div class="checkout--submessage">
-                This is a carbon-neutral delivery
+                <p>This is a <span>carbon-neutral</span> delivery</p>
               </div>
-              <button class="btn__order-confirmation">Confirm Order</button>
+              <button class="btn btn--lg btn__order-confirmation">
+                Confirm Order
+              </button>
             </div>
           </section>
         </div>
