@@ -26,6 +26,7 @@ body {
   background-color: var(--rose-50);
   font-family: 'Red Hat Text', sans-serif;
   font-weight: 400;
+  color: var(--rose-900);
 }
 
 .site-wrapper {
@@ -36,7 +37,7 @@ body {
   min-width: 320px;
   max-width: 1440px;
   width: 100%;
-  padding: 0 1rem;
+  padding: 2rem 1rem 0 1rem;
 }
 
 .app-view {
@@ -46,13 +47,15 @@ body {
 
 @media only screen and (min-width: 600px) {
   .site-wrapper {
-    padding: 0 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 
 @media only screen and (min-width: 720px) {
   .site-wrapper {
-    padding: 0 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .app-view {
@@ -343,11 +346,113 @@ body {
   }
 }
 
+/*********************/
+/* Confirmation Modal */
+/*********************/
+
+.confirmation-modal {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-color: transparent;
+  border-radius: 0.5rem;
+  min-width: 375px;
+  max-width: 600px;
+}
+
+.confirmation-icon-wrapper {
+  margin-bottom: 2rem;
+}
+
+.confirmation-modal h2 {
+  font-size: 2.5rem;
+}
+
+.confirmation-modal > p {
+  color: var(--rose-500);
+}
+
+.confirmed-items-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  margin-top: 1.5rem;
+  background-color: var(--rose-50);
+  padding: 1.5rem;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+
+.confirmed-item {
+  border-bottom: 1px solid var(--rose-100);
+  padding-bottom: 1rem;
+  -moz-column-gap: 0.25rem;
+  column-gap: 0.75rem;
+}
+
+.confirmed-item-image-wrapper {
+  flex-basis: 20%;
+}
+
+.confirmed-item-body-wrapper {
+  flex-basis: 75%;
+}
+
+.confirmed-item-body-wrapper {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.confirmed-item-body p,
+.confirmed-item-total-price {
+  font-weight: 500;
+}
+
+.confirmed-item-qty {
+  color: var(--primary-red);
+  font-weight: 500;
+  margin-right: 0.75rem;
+}
+
+.confirmed-item-price {
+  color: var(--rose-300);
+}
+
+.confirmation-final-calc {
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--rose-50);
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.confirmation-final-calc-text {
+  font-weight: 500;
+}
+
+.confirmation-final-calc-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.btn__new-order {
+  margin-top: 1.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--primary-red);
+  padding: 0.65rem 0.75rem;
+  background-color: var(--primary-red);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+}
+
 /**********/
 /* Footer */
 /**********/
 .fm-byline {
   margin-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .fm-byline-text {
@@ -358,6 +463,8 @@ body {
 
 .fm-byline-text,
 .fm-byline-text a {
+  color: var(--primary-red);
+  font-weight: 500;
 }
 
 /*****************/

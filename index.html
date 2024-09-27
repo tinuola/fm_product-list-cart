@@ -385,7 +385,10 @@
         </div>
 
         <!-- Confirmation Modal -->
-        <dialog class="confirmation-modal">
+        <dialog
+          class="confirmation-modal"
+          open
+        >
           <div class="confirmation-icon-wrapper">
             <img
               src="/assets/images/icon-order-confirmed.svg"
@@ -396,68 +399,74 @@
           <p>We hope you enjoy your food!</p>
           <ul class="confirmed-items-list">
             <!-- item 1 -->
-            <li class="confirmed-item">
-              <!-- <div class="confirmed-item-wrapper"> -->
+            <li class="confirmed-item u-flex">
               <div class="confirmed-item-image-wrapper">
                 <img
                   src="assets/images/image-tiramisu-thumbnail.jpg"
                   alt=""
                 />
               </div>
-              <div class="confirmed-item-body">
-                <p>Classic Tiramisu</p>
-                <div class="confirmed-item-data">
-                  <span class="confirmed-item-qty"><span>1</span>x</span>
-                  <span class="confirmed-item-price">@$<span>5.50</span></span>
+              <div class="confirmed-item-body-wrapper u-flex">
+                <div class="confirmed-item-body">
+                  <p>Classic Tiramisu</p>
+                  <div class="confirmed-item-data">
+                    <span class="confirmed-item-qty"><span>1</span>x</span>
+                    <span class="confirmed-item-price"
+                      >@<span> <span>$</span>5.50</span></span
+                    >
+                  </div>
                 </div>
+                <div class="confirmed-item-total-price">$<span>5.50</span></div>
               </div>
-              <div class="confirmed-item-total-price">$<span>5.50</span></div>
-              <!-- </div> -->
             </li>
             <!-- item 2 -->
-            <li class="confirmed-item">
-              <!-- <div class="confirmed-item-wrapper"> -->
+            <li class="confirmed-item u-flex">
               <div class="confirmed-item-image-wrapper">
                 <img
                   src="assets/images/image-tiramisu-thumbnail.jpg"
                   alt=""
                 />
               </div>
-              <div class="confirmed-item-body">
-                <p>Classic Tiramisu</p>
-                <div class="confirmed-item-data">
-                  <span class="confirmed-item-qty"><span>1</span>x</span>
-                  <span class="confirmed-item-price">@$<span>5.50</span></span>
+              <div class="confirmed-item-body-wrapper u-flex">
+                <div class="confirmed-item-body">
+                  <p>Classic Tiramisu</p>
+                  <div class="confirmed-item-data">
+                    <span class="confirmed-item-qty"><span>1</span>x</span>
+                    <span class="confirmed-item-price"
+                      >@<span> <span>$</span>5.50</span></span
+                    >
+                  </div>
                 </div>
+                <div class="confirmed-item-total-price">$<span>5.50</span></div>
               </div>
-              <div class="confirmed-item-total-price">$<span>5.50</span></div>
-              <!-- </div> -->
             </li>
             <!-- item 3 -->
-            <li class="confirmed-item">
-              <!-- <div class="confirmed-item-wrapper"> -->
+            <li class="confirmed-item u-flex">
               <div class="confirmed-item-image-wrapper">
                 <img
                   src="assets/images/image-tiramisu-thumbnail.jpg"
                   alt=""
                 />
               </div>
-              <div class="confirmed-item-body">
-                <p>Classic Tiramisu</p>
-                <div class="confirmed-item-data">
-                  <span class="confirmed-item-qty"><span>1</span>x</span>
-                  <span class="confirmed-item-price">@$<span>5.50</span></span>
+              <div class="confirmed-item-body-wrapper u-flex">
+                <div class="confirmed-item-body">
+                  <p>Classic Tiramisu</p>
+                  <div class="confirmed-item-data">
+                    <span class="confirmed-item-qty"><span>1</span>x</span>
+                    <span class="confirmed-item-price"
+                      >@<span> <span>$</span>5.50</span></span
+                    >
+                  </div>
                 </div>
+                <div class="confirmed-item-total-price">$<span>5.50</span></div>
               </div>
-              <div class="confirmed-item-total-price">$<span>5.50</span></div>
-              <!-- </div> -->
             </li>
           </ul>
-          <div class="final-calc">
-            <p class="final-calc-text">Order Total</p>
-            <p class="final-calc-amount"><span>$</span>46.50</p>
+          <div class="confirmation-final-calc u-flex">
+            <p class="confirmation-final-calc-text">Order Total</p>
+            <p class="confirmation-final-calc-amount"><span>$</span>46.50</p>
           </div>
-          <button class="btn_new-order">Start New Order</button>
+          <button class="btn btn--lg btn__new-order">Start New Order</button>
         </dialog>
       </main>
 
