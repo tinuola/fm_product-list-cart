@@ -447,6 +447,20 @@ body {
   width: 100%;
 }
 
+dialog {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+::-webkit-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 /**********/
 /* Footer */
 /**********/

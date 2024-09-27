@@ -377,7 +377,10 @@
               <div class="checkout--submessage">
                 <p>This is a <span>carbon-neutral</span> delivery</p>
               </div>
-              <button class="btn btn--lg btn__order-confirmation">
+              <button
+                class="btn btn--lg btn__order-confirmation"
+                id="confirm-order-btn"
+              >
                 Confirm Order
               </button>
             </div>
@@ -385,10 +388,7 @@
         </div>
 
         <!-- Confirmation Modal -->
-        <dialog
-          class="confirmation-modal"
-          open
-        >
+        <dialog class="confirmation-modal">
           <div class="confirmation-icon-wrapper">
             <img
               src="/assets/images/icon-order-confirmed.svg"
@@ -466,7 +466,12 @@
             <p class="confirmation-final-calc-text">Order Total</p>
             <p class="confirmation-final-calc-amount"><span>$</span>46.50</p>
           </div>
-          <button class="btn btn--lg btn__new-order">Start New Order</button>
+          <button
+            class="btn btn--lg btn__new-order"
+            id="new-order-btn"
+          >
+            Start New Order
+          </button>
         </dialog>
       </main>
 
