@@ -250,7 +250,7 @@ body {
 }
 
 .checkout-panel-empty {
-  display: none;
+  /* display: none; */
 }
 
 .checkout-panel-empty img {
@@ -267,7 +267,7 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
-  /* display: none; */
+  display: none;
 }
 
 .checkout-items-list {
