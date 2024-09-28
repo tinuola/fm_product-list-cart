@@ -1,15 +1,17 @@
-console.log('Hello!')
+import products from '../data/data.js'
 
-const dialog = document.querySelector('dialog')
+const { reactive, toRefs } = Vue
 
-const confirmBtn = document.querySelector('#confirm-order-btn')
+const App = {
+  setup() {
+    const state = reactive({
+      products,
+    })
 
-const newOrderBtn = document.querySelector('#new-order-btn')
+    return {
+      ...toRefs(state),
+    }
+  },
+}
 
-confirmBtn.addEventListener('click', () => {
-  dialog.showModal()
-})
-
-newOrderBtn.addEventListener('click', () => {
-  dialog.close()
-})
+Vue.createApp(App).mount('#app')
