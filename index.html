@@ -129,7 +129,7 @@
                   >
                     <span
                       class="btn__decrease-qty"
-                      @click="decreaseItemCount(index, product.sku)"
+                      @click="decreaseItemCount(index)"
                       ><img
                         src="assets/images/icon-decrement-quantity.svg"
                         alt="Decrease quantity by 1"
@@ -139,7 +139,7 @@
                     >
                     <span
                       class="btn__increase-qty"
-                      @click="increaseItemCount(index, product.sku)"
+                      @click="increaseItemCount(index)"
                       ><img
                         src="assets/images/icon-increment-quantity.svg"
                         alt="Increase quantity by 1"
@@ -149,11 +149,11 @@
                   <button
                     v-else
                     class="btn--sm btn__add-to-cart"
-                    @click="addProductToCart(index, product.sku)"
+                    @click="addProductToCart(index)"
                   >
                     <img
                       src="assets/images/icon-add-to-cart.svg"
-                      alt=""
+                      alt="Add to cart icon"
                     /><span>Add to Cart</span>
                   </button>
                 </div>
@@ -208,7 +208,7 @@
                     >
                       <img
                         src="assets/images/icon-remove-item.svg"
-                        alt=""
+                        alt="Remove from cart icon"
                       />
                     </div>
                   </div>
@@ -239,7 +239,7 @@
               <div class="checkout-panel-empty-image-wrapper">
                 <img
                   src="assets/images/illustration-empty-cart.svg"
-                  alt=""
+                  alt="Empty checkout image"
                 />
               </div>
               <p>Your added items will appear here.</p>
@@ -252,7 +252,7 @@
           <div class="confirmation-icon-wrapper">
             <img
               src="/assets/images/icon-order-confirmed.svg"
-              alt=""
+              alt="Order confirmed icon"
             />
           </div>
           <h2>Order Confirmed</h2>
