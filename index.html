@@ -262,30 +262,42 @@
           <h2>Order Confirmed</h2>
           <p>We hope you enjoy your food!</p>
           <ul class="confirmed-items-list">
-            <li class="confirmed-item u-flex">
+            <li
+              v-for="(product,index) in parsedProducts"
+              :key="product.name"
+              class="confirmed-item u-flex"
+            >
               <div class="confirmed-item-image-wrapper">
                 <img
-                  src="assets/images/image-tiramisu-thumbnail.jpg"
-                  alt=""
+                  :src="product.image.thumbnail"
+                  :alt="product.name"
                 />
               </div>
               <div class="confirmed-item-body-wrapper u-flex">
                 <div class="confirmed-item-body">
-                  <p>Classic Tiramisu</p>
+                  <p>{{product.name}}</p>
                   <div class="confirmed-item-data">
-                    <span class="confirmed-item-qty"><span>1</span>x</span>
+                    <span class="confirmed-item-qty"
+                      ><span>{{product.quantity}}</span>x</span
+                    >
                     <span class="confirmed-item-price"
-                      >@<span> <span>$</span>5.50</span></span
+                      >@<span>
+                        <span>$</span>{{product.price.toFixed(2)}}</span
+                      ></span
                     >
                   </div>
                 </div>
-                <div class="confirmed-item-total-price">$<span>5.50</span></div>
+                <div class="confirmed-item-total-price">
+                  $<span>{{product.totalItemPrice.toFixed(2)}}</span>
+                </div>
               </div>
             </li>
           </ul>
           <div class="confirmation-final-calc u-flex">
             <p class="confirmation-final-calc-text">Order Total</p>
-            <p class="confirmation-final-calc-amount"><span>$</span>46.50</p>
+            <p class="confirmation-final-calc-amount">
+              <span>$</span>{{totalOrderPrice}}
+            </p>
           </div>
           <button
             class="btn btn--lg btn__new-order"
