@@ -328,6 +328,7 @@ body {
   border: 1px solid var(--rose-300);
   border-radius: 50%;
   padding: 0.175rem;
+  cursor: pointer;
 }
 
 .checkout-final-calc {

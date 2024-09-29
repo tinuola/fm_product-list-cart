@@ -90,14 +90,14 @@
           <section class="product-grid">
             <h2 class="product-grid-title">Desserts</h2>
 
+            <!-- :ref="(el) => productRefs[index] = el" -->
             <!-- Product items -->
             <ul class="product-items-list">
               <li
                 class="product-item-card"
                 v-for="(product, index) in products"
-                :ref="(el) => productRefs[index] = el"
                 :key="product.name"
-                :class="{selected: selectedItemsList[index]}"
+                :class="{selected: product.selected}"
               >
                 <div class="product-card-image-wrapper">
                   <picture>
@@ -125,18 +125,22 @@
                 <div class="product-card-btns-group">
                   <!-- Quantity buttons if item is selected -->
                   <button
-                    v-if="selectedItemsList[index]"
+                    v-if="product.quantity"
                     class="btn--sm btn__quantity"
                   >
-                    <span class="btn__decrease-qty"
+                    <span
+                      class="btn__decrease-qty"
+                      @click="decreaseItemCount(index, product.sku)"
                       ><img
                         src="assets/images/icon-decrement-quantity.svg"
                         alt="Decrease quantity by 1"
                     /></span>
                     <span class="product-card__selected-qty"
-                      >{{selectedItemsList[index].quantity}}</span
+                      >{{product.quantity}}</span
                     >
-                    <span class="btn__increase-qty"
+                    <span
+                      class="btn__increase-qty"
+                      @click="increaseItemCount(index, product.sku)"
                       ><img
                         src="assets/images/icon-increment-quantity.svg"
                         alt="Increase quantity by 1"
@@ -146,7 +150,7 @@
                   <button
                     v-else
                     class="btn--sm btn__add-to-cart"
-                    @click="addToCart(index)"
+                    @click="addProductToCart(index, product.sku)"
                   >
                     <img
                       src="assets/images/icon-add-to-cart.svg"
@@ -166,41 +170,48 @@
           <!-- Selected Items Checkout -->
           <section class="checkout-panel">
             <h3 class="checkout-panel-title">
-              Your Cart (<span class="checkout__total-qty">{{totalCount}}</span
+              Your Cart (<span class="checkout__total-qty"
+                >{{totalOrderCount}}</span
               >)
             </h3>
             <div
-              v-if="totalCount"
+              v-if="totalOrderCount"
               class="checkout-panel-active"
             >
               <ul class="checkout-items-list u-flex">
                 <li
-                  v-for="item in selectedItemsList"
-                  class="checkout-item u-flex"
+                  v-for="(product,index) in parsedProducts"
+                  :key="product.name"
                 >
                   <div
-                    v-if="item.selected"
-                    class="checkout-item-body"
+                    v-if="product.selected"
+                    class="checkout-item u-flex"
                   >
-                    <p>{{item.name}}</p>
-                    <div class="checkout-item-data u-flex">
-                      <span class="checkout-item-qty"
-                        ><span>{{item.quantity}}</span>x</span
-                      >
-                      <span class="checkout-item-price"
-                        ><span>@</span>
-                        <span>$</span>{{item.price.toFixed(2)}}</span
-                      >
-                      <span class="checkout-item-total-price"
-                        ><span>$</span>{{item.totalItemPrice.toFixed(2)}}</span
-                      >
+                    <div class="checkout-item-body">
+                      <p>{{product.name}}</p>
+                      <div class="checkout-item-data u-flex">
+                        <span class="checkout-item-qty"
+                          ><span>{{product.quantity}}</span>x</span
+                        >
+                        <span class="checkout-item-price"
+                          ><span>@</span>
+                          <span>$</span>{{product.price.toFixed(2)}}</span
+                        >
+                        <span class="checkout-item-total-price"
+                          ><span>$</span
+                          >{{product.totalItemPrice.toFixed(2)}}</span
+                        >
+                      </div>
                     </div>
-                  </div>
-                  <div class="checkout-item-cancel-icon">
-                    <img
-                      src="assets/images/icon-remove-item.svg"
-                      alt=""
-                    />
+                    <div
+                      class="checkout-item-cancel-icon"
+                      @click="removeFromCart(index, product.sku)"
+                    >
+                      <img
+                        src="assets/images/icon-remove-item.svg"
+                        alt=""
+                      />
+                    </div>
                   </div>
                 </li>
               </ul>

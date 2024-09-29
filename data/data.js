@@ -10,6 +10,8 @@ const appData = [
     category: 'Waffle',
     price: 6.5,
     sku: crypto.randomUUID(),
+    inventory: null,
+    quantity: 0,
   },
   {
     image: {
@@ -22,6 +24,8 @@ const appData = [
     category: 'Crème Brûlée',
     price: 7.0,
     sku: crypto.randomUUID(),
+    inventory: null,
+    quantity: 0,
   },
   {
     image: {
@@ -34,6 +38,8 @@ const appData = [
     category: 'Macaron',
     price: 8.0,
     sku: crypto.randomUUID(),
+    inventory: null,
+    quantity: 0,
   },
   {
     image: {
@@ -46,6 +52,8 @@ const appData = [
     category: 'Tiramisu',
     price: 5.5,
     sku: crypto.randomUUID(),
+    inventory: null,
+    quantity: 0,
   },
   {
     image: {
@@ -58,6 +66,8 @@ const appData = [
     category: 'Baklava',
     price: 4.0,
     sku: crypto.randomUUID(),
+    inventory: null,
+    quantity: 0,
   },
   {
     image: {
@@ -70,6 +80,8 @@ const appData = [
     category: 'Pie',
     price: 5.0,
     sku: crypto.randomUUID(),
+    inventory: null,
+    quantity: 0,
   },
   {
     image: {
@@ -82,6 +94,8 @@ const appData = [
     category: 'Cake',
     price: 4.5,
     sku: crypto.randomUUID(),
+    inventory: null,
+    quantity: 0,
   },
   {
     image: {
@@ -94,6 +108,8 @@ const appData = [
     category: 'Brownie',
     price: 4.5,
     sku: crypto.randomUUID(),
+    inventory: null,
+    quantity: 0,
   },
   {
     image: {
@@ -106,6 +122,8 @@ const appData = [
     category: 'Panna Cotta',
     price: 6.5,
     sku: crypto.randomUUID(),
+    inventory: null,
+    quantity: 0,
   },
 ]
 

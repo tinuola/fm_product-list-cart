@@ -1,62 +1,98 @@
 import products from '../data/data.js'
 
-const { computed, ref, reactive, toRefs } = Vue
+const { computed, ref } = Vue
 
 const App = {
-  props: {},
-
   setup() {
-    const state = reactive({
-      products,
-      productRefs: [],
+    const productRefs = ref(products)
+
+    const totalOrderCount = ref(0)
+
+    const selectedItemIndex = ref()
+
+    const parsedProductsRef = ref()
+
+    // COMPUTED
+    const parsedProducts = computed(() => {
+      const prods = productRefs.value.filter((obj) => obj.selected === true)
+
+      const calc = prods.map((obj) => {
+        const totalItemPrice = obj.quantity * obj.price
+        return { ...obj, totalItemPrice }
+      })
+
+      return calc
     })
 
-    const productRefs = ref([])
-
-    const selectedItemsList = ref([])
-
-    const totalCount = ref(0)
-
     const totalOrderPrice = computed(() => {
-      if (!selectedItemsList.value) {
-        return 0
-      }
-
-      const calc = selectedItemsList.value.reduce((a, b) => {
+      const calc = parsedProducts.value.reduce((a, b) => {
         return a + b.totalItemPrice
       }, 0)
-
+      // console.log(calc)
       return calc.toFixed(2)
     })
 
-    // Methods
-    function addToCart(el) {
-      totalCount.value++
+    // METHODS
+    function addProductToCart(index, skuNum) {
+      // if (productAlreadyInCart(skuNum) >= 0) {
+      //   console.log('Already in cart!')
+      //   return
+      // }
 
-      const { name, price, image } = products[el]
-      const { thumbnail } = image
+      productRefs.value[index].selected = true
+      productRefs.value[index].quantity = 1
 
-      const selectedItem = {
-        name,
-        price,
-        thumbnail,
-        selected: true,
-        quantity: 1,
-        totalItemPrice: price,
-      }
-
-      selectedItemsList.value.push(selectedItem)
+      totalOrderCount.value++
     }
 
-    function calculateTotal() {}
+    function productAlreadyInCart(id) {
+      if (parsedProducts.value.length) {
+        const skuExists = parsedProducts.value.findIndex(
+          (prodObj) => prodObj.sku === id
+        )
+        return skuExists
+      }
+    }
+
+    function increaseItemCount(idx, skuNum) {
+      productRefs.value[idx].quantity++
+
+      productRefs.value[idx].totalItemPrice =
+        productRefs.value[idx].quantity * productRefs.value[idx].price
+
+      totalOrderCount.value++
+    }
+
+    function decreaseItemCount(idx, skuNum) {
+      productRefs.value[idx].quantity--
+
+      productRefs.value[idx].totalItemPrice =
+        productRefs.value[idx].quantity * productRefs.value[idx].price
+
+      totalOrderCount.value--
+
+      if (productRefs.value[idx].quantity === 0) {
+        productRefs.value[idx].selected = false
+      }
+    }
+
+    function removeFromCart(idx, itemId) {
+      // const id = productAlreadyInCart(itemId)
+      console.log('remove', itemId, idx)
+      // productRefs.value[idx].selected = false
+      // productRefs.value[idx].quantity = 0
+    }
 
     return {
-      ...toRefs(state),
-      addToCart,
-      calculateTotal,
+      addProductToCart,
+      decreaseItemCount,
+      increaseItemCount,
+      parsedProducts,
+      products,
       productRefs,
-      selectedItemsList,
-      totalCount,
+      removeFromCart,
+      selectedItemIndex,
+      totalOrderCount,
       totalOrderPrice,
     }
   },
