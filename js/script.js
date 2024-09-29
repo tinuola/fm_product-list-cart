@@ -10,8 +10,6 @@ const App = {
 
     const selectedItemIndex = ref()
 
-    const parsedProductsRef = ref()
-
     // COMPUTED
     const parsedProducts = computed(() => {
       const prods = productRefs.value.filter((obj) => obj.selected === true)
@@ -28,30 +26,16 @@ const App = {
       const calc = parsedProducts.value.reduce((a, b) => {
         return a + b.totalItemPrice
       }, 0)
-      // console.log(calc)
+
       return calc.toFixed(2)
     })
 
     // METHODS
     function addProductToCart(index, skuNum) {
-      // if (productAlreadyInCart(skuNum) >= 0) {
-      //   console.log('Already in cart!')
-      //   return
-      // }
-
       productRefs.value[index].selected = true
       productRefs.value[index].quantity = 1
 
       totalOrderCount.value++
-    }
-
-    function productAlreadyInCart(id) {
-      if (parsedProducts.value.length) {
-        const skuExists = parsedProducts.value.findIndex(
-          (prodObj) => prodObj.sku === id
-        )
-        return skuExists
-      }
     }
 
     function increaseItemCount(idx, skuNum) {
@@ -77,10 +61,15 @@ const App = {
     }
 
     function removeFromCart(idx, itemId) {
-      // const id = productAlreadyInCart(itemId)
-      console.log('remove', itemId, idx)
-      // productRefs.value[idx].selected = false
-      // productRefs.value[idx].quantity = 0
+      const skuIndex = productRefs.value.findIndex(
+        (prodObj) => prodObj.sku === itemId
+      )
+
+      totalOrderCount.value -= parsedProducts.value[idx].quantity
+
+      productRefs.value[skuIndex].selected = false
+
+      productRefs.value[skuIndex].quantity = 0
     }
 
     return {
