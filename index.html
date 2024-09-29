@@ -94,7 +94,10 @@
             <ul class="product-items-list">
               <li
                 class="product-item-card"
-                v-for="product in products"
+                v-for="(product, index) in products"
+                :ref="(el) => productRefs[index] = el"
+                :key="product.name"
+                :class="{selected: selectedItemsList[index]}"
               >
                 <div class="product-card-image-wrapper">
                   <picture>
@@ -103,7 +106,7 @@
                       :srcset="product.image.desktop"
                     />
                     <source
-                      media="(min-width: 500px)"
+                      media="(min-width: 551px)"
                       :srcset="product.image.tablet"
                     />
                     <source
@@ -118,26 +121,37 @@
                     />
                   </picture>
                 </div>
-                <!-- Selection buttons -->
+                <!-- Buttons -->
                 <div class="product-card-btns-group">
-                  <button class="btn--sm btn__add-to-cart">
-                    <img
-                      src="assets/images/icon-add-to-cart.svg"
-                      alt=""
-                    /><span>Add to Cart</span>
-                  </button>
-                  <button class="btn--sm btn__quantity">
+                  <!-- Quantity buttons if item is selected -->
+                  <button
+                    v-if="selectedItemsList[index]"
+                    class="btn--sm btn__quantity"
+                  >
                     <span class="btn__decrease-qty"
                       ><img
                         src="assets/images/icon-decrement-quantity.svg"
                         alt="Decrease quantity by 1"
                     /></span>
-                    <span class="product-card__selected-qty">1</span>
+                    <span class="product-card__selected-qty"
+                      >{{selectedItemsList[index].quantity}}</span
+                    >
                     <span class="btn__increase-qty"
                       ><img
                         src="assets/images/icon-increment-quantity.svg"
                         alt="Increase quantity by 1"
                     /></span>
+                  </button>
+                  <!-- Default add-to-cart button -->
+                  <button
+                    v-else
+                    class="btn--sm btn__add-to-cart"
+                    @click="addToCart(index)"
+                  >
+                    <img
+                      src="assets/images/icon-add-to-cart.svg"
+                      alt=""
+                    /><span>Add to Cart</span>
                   </button>
                 </div>
                 <div class="product-card-content u-flex">
@@ -149,75 +163,36 @@
             </ul>
           </section>
 
-          <!-- Checkout -->
+          <!-- Selected Items Checkout -->
           <section class="checkout-panel">
             <h3 class="checkout-panel-title">
-              Your Cart (<span class="checkout__total-qty">0</span>)
+              Your Cart (<span class="checkout__total-qty">{{totalCount}}</span
+              >)
             </h3>
-            <div class="checkout-panel-empty">
-              <div class="checkout-panel-empty-image-wrapper">
-                <img
-                  src="assets/images/illustration-empty-cart.svg"
-                  alt=""
-                />
-              </div>
-              <p>Your added items will appear here.</p>
-            </div>
-            <div class="checkout-panel-active">
+            <div
+              v-if="totalCount"
+              class="checkout-panel-active"
+            >
               <ul class="checkout-items-list u-flex">
-                <!-- item 1 -->
-                <li class="checkout-item u-flex">
-                  <div class="checkout-item-body">
-                    <p>Classic Tiramisu</p>
+                <li
+                  v-for="item in selectedItemsList"
+                  class="checkout-item u-flex"
+                >
+                  <div
+                    v-if="item.selected"
+                    class="checkout-item-body"
+                  >
+                    <p>{{item.name}}</p>
                     <div class="checkout-item-data u-flex">
-                      <span class="checkout-item-qty"><span>1</span>x</span>
+                      <span class="checkout-item-qty"
+                        ><span>{{item.quantity}}</span>x</span
+                      >
                       <span class="checkout-item-price"
-                        ><span>@</span> <span>$</span>5.50</span
+                        ><span>@</span>
+                        <span>$</span>{{item.price.toFixed(2)}}</span
                       >
                       <span class="checkout-item-total-price"
-                        ><span>$</span>5.50</span
-                      >
-                    </div>
-                  </div>
-                  <div class="checkout-item-cancel-icon">
-                    <img
-                      src="assets/images/icon-remove-item.svg"
-                      alt=""
-                    />
-                  </div>
-                </li>
-                <!-- item 2 -->
-                <li class="checkout-item u-flex">
-                  <div class="checkout-item-body">
-                    <p>Classic Tiramisu</p>
-                    <div class="checkout-item-data u-flex">
-                      <span class="checkout-item-qty"><span>1</span>x</span>
-                      <span class="checkout-item-price"
-                        ><span>@</span> <span>$</span>5.50</span
-                      >
-                      <span class="checkout-item-total-price"
-                        ><span>$</span>5.50</span
-                      >
-                    </div>
-                  </div>
-                  <div class="checkout-item-cancel-icon">
-                    <img
-                      src="assets/images/icon-remove-item.svg"
-                      alt=""
-                    />
-                  </div>
-                </li>
-                <!-- item 3 -->
-                <li class="checkout-item u-flex">
-                  <div class="checkout-item-body">
-                    <p>Classic Tiramisu</p>
-                    <div class="checkout-item-data u-flex u-flex">
-                      <span class="checkout-item-qty"><span>1</span>x</span>
-                      <span class="checkout-item-price"
-                        ><span>@</span> <span>$</span>5.50</span
-                      >
-                      <span class="checkout-item-total-price"
-                        ><span>$</span>5.50</span
+                        ><span>$</span>{{item.totalItemPrice.toFixed(2)}}</span
                       >
                     </div>
                   </div>
@@ -231,7 +206,9 @@
               </ul>
               <div class="checkout-final-calc u-flex">
                 <p class="checkout-final-calc-text">Order Total</p>
-                <p class="checkout-final-calc-amount"><span>$</span>46.50</p>
+                <p class="checkout-final-calc-amount">
+                  <span>$</span>{{totalOrderPrice}}
+                </p>
               </div>
               <div class="checkout--submessage">
                 <p>This is a <span>carbon-neutral</span> delivery</p>
@@ -242,6 +219,20 @@
               >
                 Confirm Order
               </button>
+            </div>
+
+            <!-- Display if no item is selected -->
+            <div
+              v-else
+              class="checkout-panel-empty"
+            >
+              <div class="checkout-panel-empty-image-wrapper">
+                <img
+                  src="assets/images/illustration-empty-cart.svg"
+                  alt=""
+                />
+              </div>
+              <p>Your added items will appear here.</p>
             </div>
           </section>
         </div>
@@ -257,49 +248,6 @@
           <h2>Order Confirmed</h2>
           <p>We hope you enjoy your food!</p>
           <ul class="confirmed-items-list">
-            <!-- item 1 -->
-            <li class="confirmed-item u-flex">
-              <div class="confirmed-item-image-wrapper">
-                <img
-                  src="assets/images/image-tiramisu-thumbnail.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="confirmed-item-body-wrapper u-flex">
-                <div class="confirmed-item-body">
-                  <p>Classic Tiramisu</p>
-                  <div class="confirmed-item-data">
-                    <span class="confirmed-item-qty"><span>1</span>x</span>
-                    <span class="confirmed-item-price"
-                      >@<span> <span>$</span>5.50</span></span
-                    >
-                  </div>
-                </div>
-                <div class="confirmed-item-total-price">$<span>5.50</span></div>
-              </div>
-            </li>
-            <!-- item 2 -->
-            <li class="confirmed-item u-flex">
-              <div class="confirmed-item-image-wrapper">
-                <img
-                  src="assets/images/image-tiramisu-thumbnail.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="confirmed-item-body-wrapper u-flex">
-                <div class="confirmed-item-body">
-                  <p>Classic Tiramisu</p>
-                  <div class="confirmed-item-data">
-                    <span class="confirmed-item-qty"><span>1</span>x</span>
-                    <span class="confirmed-item-price"
-                      >@<span> <span>$</span>5.50</span></span
-                    >
-                  </div>
-                </div>
-                <div class="confirmed-item-total-price">$<span>5.50</span></div>
-              </div>
-            </li>
-            <!-- item 3 -->
             <li class="confirmed-item u-flex">
               <div class="confirmed-item-image-wrapper">
                 <img
