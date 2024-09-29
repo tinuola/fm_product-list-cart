@@ -1,12 +1,16 @@
 import data from '../data/data.js'
 
-const { computed, ref } = Vue
+const { computed, onMounted, ref } = Vue
 
 const App = {
   setup() {
     const products = ref(data)
-
     const totalOrderCount = ref(0)
+    const dialogRef = ref(null)
+
+    onMounted(() => {
+      dialogRef.value = document.querySelector('dialog')
+    })
 
     // COMPUTED
     const parsedProducts = computed(() => {
@@ -72,13 +76,30 @@ const App = {
       products.value[skuIndex].quantity = 0
     }
 
+    function confirmOrder() {
+      dialogRef.value.showModal()
+    }
+
+    function startNewOrder() {
+      products.value.forEach((obj) => {
+        obj.selected = false
+        obj.quantity = 0
+      })
+
+      totalOrderCount.value = 0
+
+      dialogRef.value.close()
+    }
+
     return {
       addProductToCart,
+      confirmOrder,
       decreaseItemCount,
       increaseItemCount,
       parsedProducts,
       products,
       removeFromCart,
+      startNewOrder,
       totalOrderCount,
       totalOrderPrice,
     }

@@ -226,6 +226,7 @@
               <button
                 class="btn btn--lg btn__order-confirmation"
                 id="confirm-order-btn"
+                @click="confirmOrder"
               >
                 Confirm Order
               </button>
@@ -248,7 +249,10 @@
         </div>
 
         <!-- Confirmation Modal -->
-        <dialog class="confirmation-modal">
+        <dialog
+          class="confirmation-modal"
+          ref="dialog-ref"
+        >
           <div class="confirmation-icon-wrapper">
             <img
               src="/assets/images/icon-order-confirmed.svg"
@@ -286,6 +290,7 @@
           <button
             class="btn btn--lg btn__new-order"
             id="new-order-btn"
+            @click="startNewOrder"
           >
             Start New Order
           </button>

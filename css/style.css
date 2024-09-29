@@ -78,7 +78,7 @@ body {
 
 @media only screen and (min-width: 1200px) {
   .site-wrapper {
-    padding: 0 3rem;
+    padding: 3rem;
   }
 }
 
@@ -500,6 +500,7 @@ body {
 }
 
 dialog {
+  /* display: block; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -518,7 +519,6 @@ dialog {
 /**********/
 .fm-byline {
   margin-top: 4rem;
-  padding-bottom: 2rem;
 }
 
 .fm-byline-text {
