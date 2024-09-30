@@ -93,6 +93,7 @@ body {
 .product-grid h2 {
   color: var(--rose-900);
   margin-bottom: 1.5rem;
+  font-size: 2.5rem;
 }
 
 .product-items-list {
@@ -385,6 +386,17 @@ body {
   background-color: var(--primary-red-hover);
 }
 
+@media only screen and (max-width: 799px) {
+  .sticky.checkout-panel {
+    border: 2px solid var(--primary-red-hover);
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 1;
+    bottom: -15%;
+    transform: translate(0, 20%);
+  }
+}
+
 @media only screen and (min-width: 800px) {
   .checkout-panel {
     flex-basis: 39%;
@@ -408,16 +420,22 @@ body {
   border-color: transparent;
   border-radius: 0.5rem;
   min-width: 375px;
-  max-width: 500px;
   width: 100%;
+}
+
+@media only screen and (min-width: 516px) {
+  .confirmation-modal {
+    max-width: 500px;
+  }
 }
 
 .confirmation-icon-wrapper {
   margin-bottom: 2rem;
 }
 
-.confirmation-modal h2 {
+.confirmation-modal h3 {
   font-size: 2.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .confirmation-modal > p {
