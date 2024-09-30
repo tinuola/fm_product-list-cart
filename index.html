@@ -153,7 +153,7 @@
                   >
                     <img
                       src="assets/images/icon-add-to-cart.svg"
-                      alt="Add to cart icon"
+                      alt=""
                     /><span>Add to Cart</span>
                   </button>
                 </div>
@@ -208,7 +208,7 @@
                     >
                       <img
                         src="assets/images/icon-remove-item.svg"
-                        alt="Remove from cart icon"
+                        alt="Remove item from cart"
                       />
                     </div>
                   </div>
@@ -216,9 +216,9 @@
               </ul>
               <div class="checkout-final-calc u-flex">
                 <p class="checkout-final-calc-text">Order Total</p>
-                <p class="checkout-final-calc-amount">
+                <h4 class="checkout-final-calc-amount">
                   <span>$</span>{{totalOrderPrice}}
-                </p>
+                </h4>
               </div>
               <div class="checkout--submessage">
                 <p>This is a <span>carbon-neutral</span> delivery</p>
@@ -240,7 +240,7 @@
               <div class="checkout-panel-empty-image-wrapper">
                 <img
                   src="assets/images/illustration-empty-cart.svg"
-                  alt="Empty checkout image"
+                  alt="Cake with a slice removed"
                 />
               </div>
               <p>Your added items will appear here.</p>
@@ -259,7 +259,7 @@
               alt="Order confirmed icon"
             />
           </div>
-          <h2>Order Confirmed</h2>
+          <h3>Order Confirmed</h3>
           <p>We hope you enjoy your food!</p>
           <ul class="confirmed-items-list">
             <li
@@ -270,7 +270,7 @@
               <div class="confirmed-item-image-wrapper">
                 <img
                   :src="product.image.thumbnail"
-                  :alt="product.name"
+                  alt=""
                 />
               </div>
               <div class="confirmed-item-body-wrapper u-flex">
@@ -295,9 +295,9 @@
           </ul>
           <div class="confirmation-final-calc u-flex">
             <p class="confirmation-final-calc-text">Order Total</p>
-            <p class="confirmation-final-calc-amount">
+            <h4 class="confirmation-final-calc-amount">
               <span>$</span>{{totalOrderPrice}}
-            </p>
+            </h4>
           </div>
           <button
             class="btn btn--lg btn__new-order"

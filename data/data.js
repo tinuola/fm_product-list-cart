@@ -34,7 +34,7 @@ const appData = [
       tablet: 'assets/images/image-macaron-tablet.jpg',
       desktop: 'assets/images/image-macaron-desktop.jpg',
     },
-    name: 'Macaron Mix of Five',
+    name: 'Macaron Mix (5 pcs)',
     category: 'Macaron',
     price: 8.0,
     sku: crypto.randomUUID(),
