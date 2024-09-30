@@ -123,28 +123,32 @@
                 <!-- Buttons -->
                 <div class="product-card-btns-group">
                   <!-- Quantity buttons if item is selected -->
-                  <button
+                  <div
                     v-if="product.quantity"
                     class="btn--sm btn__quantity"
                   >
-                    <span
+                    <button
                       class="btn__decrease-qty"
                       @click="decreaseItemCount(index)"
-                      ><img
+                    >
+                      <img
                         src="assets/images/icon-decrement-quantity.svg"
                         alt="Decrease quantity by 1"
-                    /></span>
+                      />
+                    </button>
                     <span class="product-card__selected-qty"
                       >{{product.quantity}}</span
                     >
-                    <span
+                    <button
                       class="btn__increase-qty"
                       @click="increaseItemCount(index)"
-                      ><img
+                    >
+                      <img
                         src="assets/images/icon-increment-quantity.svg"
                         alt="Increase quantity by 1"
-                    /></span>
-                  </button>
+                      />
+                    </button>
+                  </div>
                   <!-- Default add-to-cart button -->
                   <button
                     v-else
@@ -193,7 +197,7 @@
                           ><span>{{product.quantity}}</span>x</span
                         >
                         <span class="checkout-item-price"
-                          ><span>@</span>
+                          ><span>@&nbsp;</span>
                           <span>$</span>{{product.price.toFixed(2)}}</span
                         >
                         <span class="checkout-item-total-price"
@@ -281,7 +285,7 @@
                       ><span>{{product.quantity}}</span>x</span
                     >
                     <span class="confirmed-item-price"
-                      >@<span>
+                      >@&nbsp;<span>
                         <span>$</span>{{product.price.toFixed(2)}}</span
                       ></span
                     >

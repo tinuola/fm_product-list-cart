@@ -173,6 +173,7 @@ body {
 
 .btn__decrease-qty,
 .btn__increase-qty {
+  background-color: transparent;
   padding: 0.35rem;
   border-radius: 50%;
   border: 1px solid var(--rose-100);
@@ -413,7 +414,8 @@ body {
   border-color: transparent;
   border-radius: 0.5rem;
   min-width: 375px;
-  max-width: 600px;
+  max-width: 500px;
+  width: 100%;
 }
 
 .confirmation-icon-wrapper {
