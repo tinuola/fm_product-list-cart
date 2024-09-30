@@ -20,14 +20,11 @@ Live Site: [tinuola.github.io/fm_product-list-cart/](https://tinuola.github.io/f
 
 ### Retrospective
 
--
-
-### Enhancement(s)
-
--
+- Vue 3 practice with CDN build and Composition API.
 
 ### Tools & Resources
 
 - HTML, CSS, JavaScript
+- Vue 3
 
 _Visit my [Frontend Mentor profile](https://www.frontendmentor.io/profile/tinuola) to view other challenges I've completed!_
