@@ -113,6 +113,12 @@ body {
   overflow: hidden;
   grid-column: 1;
   grid-row: 1/3;
+  position: relative;
+}
+
+.product-card-image-wrapper:hover img {
+  transition: 0.2s scale ease-in-out;
+  scale: 1.025;
 }
 
 .selected .product-card-image-wrapper {
@@ -123,6 +129,8 @@ body {
   grid-column: 1;
   grid-row: 2;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .btn--sm {
@@ -137,6 +145,7 @@ body {
   border: 1px solid var(--rose-400);
   padding: 0.65rem 0.5rem;
   background-color: var(--white);
+  color: var(--rose-900);
 }
 
 .btn__add-to-cart img {
@@ -360,7 +369,7 @@ body {
 }
 
 .checkout--submessage p::before {
-  content: url('/assets/images/icon-carbon-neutral.svg');
+  content: url('../assets/images/icon-carbon-neutral.svg');
   vertical-align: text-top;
   margin-right: 0.5rem;
 }
