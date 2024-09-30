@@ -62,7 +62,6 @@ body {
   }
 }
 
-/* @media only screen and (min-width: 720px) { */
 @media only screen and (min-width: 800px) {
   .site-wrapper {
     padding-left: 2rem;
@@ -225,41 +224,36 @@ body {
   .product-items-list {
     -moz-column-gap: 1.2rem;
     column-gap: 1.2rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 
-/* @media only screen and (min-width: 720px) {
+@media only screen and (min-width: 551px) and (max-width: 799px) {
   .product-items-list {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
-
-  .product-grid {
-    flex-basis: 65%;
-  }
-} */
-
-/* @media only screen and (min-width: 999px) {
-  .product-items-list {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  }
-
-  .product-grid {
-    flex-basis: 65%;
-  }
-} */
+}
 
 @media only screen and (min-width: 800px) {
   .product-grid {
-    flex-basis: 65%;
+    flex-basis: 60%;
+  }
+
+  .product-items-list {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1066px) {
   .product-grid {
     flex-basis: 69%;
   }
 
+  .product-items-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media only screen and (min-width: 1375px) {
   .product-items-list {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
@@ -363,6 +357,7 @@ body {
 
 .checkout--submessage p {
   text-align: center;
+  font-size: 14px;
 }
 
 .checkout--submessage p span {
@@ -372,7 +367,7 @@ body {
 .checkout--submessage p::before {
   content: url('../assets/images/icon-carbon-neutral.svg');
   vertical-align: text-top;
-  margin-right: 0.5rem;
+  margin-right: 0.25rem;
 }
 
 .btn__order-confirmation {
@@ -390,15 +385,14 @@ body {
   background-color: var(--primary-red-hover);
 }
 
-/* @media only screen and (min-width: 720px) { */
 @media only screen and (min-width: 800px) {
   .checkout-panel {
-    flex-basis: 34%;
+    flex-basis: 39%;
     align-self: baseline;
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1066px) {
   .checkout-panel {
     flex-basis: 30%;
   }
@@ -511,7 +505,6 @@ body {
 }
 
 dialog {
-  /* display: block; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -542,10 +535,4 @@ dialog {
 .fm-byline-text a {
   color: var(--primary-red);
   font-weight: 500;
-}
-
-/*****************/
-/* Media Queries */
-/*****************/
-@media only screen and (min-width: 0px) {
 }
