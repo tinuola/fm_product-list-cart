@@ -125,7 +125,7 @@
                   >
                     <button
                       class="btn__decrease-qty"
-                      @click="decreaseItemCount(index)"
+                      @click="decreaseProductCount(index)"
                     >
                       <img
                         src="assets/images/icon-decrement-quantity.svg"
@@ -137,7 +137,7 @@
                     >
                     <button
                       class="btn__increase-qty"
-                      @click="increaseItemCount(index)"
+                      @click="increaseProductCount(index)"
                     >
                       <img
                         src="assets/images/icon-increment-quantity.svg"
@@ -209,7 +209,7 @@
                     </div>
                     <div
                       class="checkout-item-cancel-icon"
-                      @click="removeFromCart(index, product.sku)"
+                      @click="removeProductFromCart(index, product.sku)"
                     >
                       <img
                         src="assets/images/icon-remove-item.svg"

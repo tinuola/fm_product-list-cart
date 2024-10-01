@@ -14,10 +14,12 @@ const App = {
 
     // COMPUTED
     const parsedProducts = computed(() => {
+      // Track selected products
       const selectedProducts = products.value.filter(
         (obj) => obj.selected === true
       )
 
+      // Create key to track/calculate total price of a selected product as its quantity changes
       const selectedProductsTotalPrices = selectedProducts.map((obj) => {
         const totalItemPrice = obj.quantity * obj.price
         return { ...obj, totalItemPrice }
@@ -38,33 +40,32 @@ const App = {
     function addProductToCart(index) {
       products.value[index].selected = true
       products.value[index].quantity = 1
-
       totalOrderCount.value++
     }
 
-    function increaseItemCount(idx) {
+    function increaseProductCount(idx) {
       products.value[idx].quantity++
-
-      products.value[idx].totalItemPrice =
-        products.value[idx].quantity * products.value[idx].price
-
+      recalculatePrice(idx)
       totalOrderCount.value++
     }
 
-    function decreaseItemCount(idx) {
+    function decreaseProductCount(idx) {
       products.value[idx].quantity--
-
-      products.value[idx].totalItemPrice =
-        products.value[idx].quantity * products.value[idx].price
-
+      recalculatePrice(idx)
       totalOrderCount.value--
 
+      // Trigger removal of 'selected' class
       if (products.value[idx].quantity === 0) {
         products.value[idx].selected = false
       }
     }
 
-    function removeFromCart(idx, itemId) {
+    function recalculatePrice(idx) {
+      return (products.value[idx].totalItemPrice =
+        products.value[idx].quantity * products.value[idx].price)
+    }
+
+    function removeProductFromCart(idx, itemId) {
       const skuIndex = products.value.findIndex(
         (prodObj) => prodObj.sku === itemId
       )
@@ -81,6 +82,7 @@ const App = {
     }
 
     function startNewOrder() {
+      // Reset app data
       products.value.forEach((obj) => {
         obj.selected = false
         obj.quantity = 0
@@ -94,11 +96,11 @@ const App = {
     return {
       addProductToCart,
       confirmOrder,
-      decreaseItemCount,
-      increaseItemCount,
+      decreaseProductCount,
+      increaseProductCount,
       parsedProducts,
       products,
-      removeFromCart,
+      removeProductFromCart,
       startNewOrder,
       totalOrderCount,
       totalOrderPrice,
