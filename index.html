@@ -121,7 +121,7 @@
                   <!-- Quantity buttons if item is selected -->
                   <div
                     v-if="product.quantity"
-                    class="btn--sm btn__quantity u-font-medium u-flex"
+                    class="btn btn--sm btn__quantity u-font-medium u-flex"
                   >
                     <button
                       class="btn__decrease-qty"
@@ -148,7 +148,7 @@
                   <!-- Default add-to-cart button -->
                   <button
                     v-else
-                    class="btn--sm btn__add-to-cart u-flex"
+                    class="btn btn--sm btn__add-to-cart u-flex"
                     @click="addProductToCart(index)"
                   >
                     <img
