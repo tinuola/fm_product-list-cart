@@ -16,6 +16,10 @@
   display: flex;
 }
 
+.u-font-medium {
+  font-weight: 500;
+}
+
 .btn {
 }
 
@@ -116,12 +120,6 @@ body {
   position: relative;
 }
 
-/* .product-card-image-wrapper:hover img {
-  transition: 0.2s scale ease-in-out;
-  border-radius: 0.5rem;
-  scale: 0.975;
-} */
-
 .selected .product-card-image-wrapper {
   border: 2px solid var(--primary-red);
 }
@@ -176,7 +174,6 @@ body {
   background-color: var(--primary-red);
   color: var(--white);
   font-size: 14px;
-  font-weight: 500;
   cursor: default;
 }
 
@@ -227,7 +224,6 @@ body {
 
 .product-price {
   color: var(--primary-red);
-  font-weight: 500;
 }
 
 @media only screen and (min-width: 551px) {
@@ -339,7 +335,6 @@ body {
 
 .checkout-item-body p {
   margin-bottom: 0.25rem;
-  font-weight: 500;
 }
 
 .checkout-item-data {
@@ -347,7 +342,6 @@ body {
   -moz-column-gap: 0.85rem;
   column-gap: 0.85rem;
   max-width: 125px;
-  font-weight: 500;
 }
 
 .checkout-item-qty {
@@ -374,10 +368,6 @@ body {
   align-items: center;
 }
 
-.checkout-final-calc-text {
-  font-weight: 500;
-}
-
 .checkout-final-calc-amount {
   font-size: 1.5rem;
   font-weight: 700;
@@ -394,10 +384,6 @@ body {
   font-size: 14px;
 }
 
-.checkout--submessage p span {
-  font-weight: 500;
-}
-
 .checkout--submessage p::before {
   content: url('../assets/images/icon-carbon-neutral.svg');
   vertical-align: text-top;
@@ -411,7 +397,6 @@ body {
   background-color: var(--primary-red);
   color: var(--white);
   font-size: 14px;
-  font-weight: 500;
   width: 100%;
 }
 
@@ -482,14 +467,8 @@ body {
   align-items: center;
 }
 
-.confirmed-item-body p,
-.confirmed-item-total-price {
-  font-weight: 500;
-}
-
 .confirmed-item-qty {
   color: var(--primary-red);
-  font-weight: 500;
   margin-right: 0.75rem;
 }
 
@@ -506,10 +485,6 @@ body {
   border-bottom-left-radius: 0.5rem;
 }
 
-.confirmation-final-calc-text {
-  font-weight: 500;
-}
-
 .confirmation-final-calc-amount {
   font-size: 1.5rem;
   font-weight: 700;
@@ -523,7 +498,6 @@ body {
   background-color: var(--primary-red);
   color: var(--white);
   font-size: 14px;
-  font-weight: 500;
   width: 100%;
 }
 
@@ -561,5 +535,4 @@ dialog {
 .fm-byline-text,
 .fm-byline-text a {
   color: var(--primary-red);
-  font-weight: 500;
 }

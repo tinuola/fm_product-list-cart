@@ -121,7 +121,7 @@
                   <!-- Quantity buttons if item is selected -->
                   <div
                     v-if="product.quantity"
-                    class="btn--sm btn__quantity"
+                    class="btn--sm btn__quantity u-font-medium"
                   >
                     <button
                       class="btn__decrease-qty"
@@ -160,7 +160,9 @@
                 <div class="product-card-content u-flex">
                   <p class="product-category">{{product.category}}</p>
                   <p class="product-name">{{product.name}}</p>
-                  <p class="product-price">${{product.price.toFixed(2)}}</p>
+                  <p class="product-price u-font-medium">
+                    ${{product.price.toFixed(2)}}
+                  </p>
                 </div>
               </li>
             </ul>
@@ -190,8 +192,8 @@
                     class="checkout-item u-flex"
                   >
                     <div class="checkout-item-body">
-                      <p>{{product.name}}</p>
-                      <div class="checkout-item-data u-flex">
+                      <p class="u-font-medium">{{product.name}}</p>
+                      <div class="checkout-item-data u-flex u-font-medium">
                         <span class="checkout-item-qty"
                           ><span>{{product.quantity}}</span>x</span
                         >
@@ -218,16 +220,21 @@
                 </li>
               </ul>
               <div class="checkout-final-calc u-flex">
-                <p class="checkout-final-calc-text">Order Total</p>
+                <p class="checkout-final-calc-text u-font-medium">
+                  Order Total
+                </p>
                 <h4 class="checkout-final-calc-amount">
                   <span>$</span>{{totalOrderPrice}}
                 </h4>
               </div>
               <div class="checkout--submessage">
-                <p>This is a <span>carbon-neutral</span> delivery</p>
+                <p>
+                  This is a
+                  <span class="u-font-medium">carbon-neutral</span> delivery
+                </p>
               </div>
               <button
-                class="btn btn--lg btn__order-confirmation"
+                class="btn btn--lg btn__order-confirmation u-font-medium"
                 id="confirm-order-btn"
                 @click="confirmOrder"
               >
@@ -280,9 +287,9 @@
               </div>
               <div class="confirmed-item-body-wrapper u-flex">
                 <div class="confirmed-item-body">
-                  <p>{{product.name}}</p>
+                  <p class="u-font-medium">{{product.name}}</p>
                   <div class="confirmed-item-data">
-                    <span class="confirmed-item-qty"
+                    <span class="confirmed-item-qty u-font-medium"
                       ><span>{{product.quantity}}</span>x</span
                     >
                     <span class="confirmed-item-price"
@@ -292,20 +299,22 @@
                     >
                   </div>
                 </div>
-                <div class="confirmed-item-total-price">
+                <div class="confirmed-item-total-price u-font-medium">
                   $<span>{{product.totalItemPrice.toFixed(2)}}</span>
                 </div>
               </div>
             </li>
           </ul>
           <div class="confirmation-final-calc u-flex">
-            <p class="confirmation-final-calc-text">Order Total</p>
+            <p class="confirmation-final-calc-text u-font-medium">
+              Order Total
+            </p>
             <h4 class="confirmation-final-calc-amount">
               <span>$</span>{{totalOrderPrice}}
             </h4>
           </div>
           <button
-            class="btn btn--lg btn__new-order"
+            class="btn btn--lg btn__new-order u-font-medium"
             id="new-order-btn"
             @click="startNewOrder"
           >
@@ -315,7 +324,7 @@
       </main>
 
       <footer class="fm-byline">
-        <p class="fm-byline-text">
+        <p class="fm-byline-text u-font-medium">
           Challenge by
           <a
             href="https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d"
@@ -323,7 +332,7 @@
             >Frontend Mentor</a
           >
         </p>
-        <p class="fm-byline-text">
+        <p class="fm-byline-text u-font-medium">
           Coded by
           <a
             href="https://github.com/tinuola/fm_product-list-cart"
