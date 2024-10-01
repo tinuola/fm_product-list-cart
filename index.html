@@ -219,11 +219,9 @@
                   </div>
                 </li>
               </ul>
-              <div class="checkout-final-calc u-flex">
-                <p class="checkout-final-calc-text u-font-medium">
-                  Order Total
-                </p>
-                <h4 class="checkout-final-calc-amount">
+              <div class="final-calc-content u-flex">
+                <p class="u-font-medium">Order Total</p>
+                <h4 class="final-calc-amount">
                   <span>$</span>{{totalOrderPrice}}
                 </h4>
               </div>
@@ -234,7 +232,7 @@
                 </p>
               </div>
               <button
-                class="btn btn--lg btn__order-confirmation u-font-medium"
+                class="btn btn--lg btn__checkout u-font-medium"
                 id="confirm-order-btn"
                 @click="confirmOrder"
               >
@@ -289,29 +287,26 @@
                 <div class="confirmed-item-body">
                   <p class="u-font-medium">{{product.name}}</p>
                   <div class="confirmed-item-data">
-                    <span class="confirmed-item-qty u-font-medium"
+                    <span
+                      class="checkout-item-qty checkout-item-qty--confirmed u-font-medium"
                       ><span>{{product.quantity}}</span>x</span
                     >
-                    <span class="confirmed-item-price"
+                    <span class="checkout-item-price"
                       >@&nbsp;<span>
                         <span>$</span>{{product.price.toFixed(2)}}</span
                       ></span
                     >
                   </div>
                 </div>
-                <div class="confirmed-item-total-price u-font-medium">
+                <div class="u-font-medium">
                   $<span>{{product.totalItemPrice.toFixed(2)}}</span>
                 </div>
               </div>
             </li>
           </ul>
-          <div class="confirmation-final-calc u-flex">
-            <p class="confirmation-final-calc-text u-font-medium">
-              Order Total
-            </p>
-            <h4 class="confirmation-final-calc-amount">
-              <span>$</span>{{totalOrderPrice}}
-            </h4>
+          <div class="final-calc-content--confirmation u-flex">
+            <p class="u-font-medium">Order Total</p>
+            <h4 class="final-calc-amount"><span>$</span>{{totalOrderPrice}}</h4>
           </div>
           <button
             class="btn btn--lg btn__new-order u-font-medium"

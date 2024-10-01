@@ -20,7 +20,9 @@ Live Site: [tinuola.github.io/fm_product-list-cart/](https://tinuola.github.io/f
 
 ### Retrospective
 
-- Vue 3 practice with CDN build and Composition API.
+- Vue 3 practice with CDN build and Composition API
+- Updated color specs to improve on contrast ratios
+- Mini-utility CSS styles to reduce repeated styles
 
 ### Tools & Resources
 
