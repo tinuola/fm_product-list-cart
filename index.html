@@ -121,7 +121,7 @@
                   <!-- Quantity buttons if item is selected -->
                   <div
                     v-if="product.quantity"
-                    class="btn--sm btn__quantity u-font-medium"
+                    class="btn--sm btn__quantity u-font-medium u-flex"
                   >
                     <button
                       class="btn__decrease-qty"
@@ -148,7 +148,7 @@
                   <!-- Default add-to-cart button -->
                   <button
                     v-else
-                    class="btn--sm btn__add-to-cart"
+                    class="btn--sm btn__add-to-cart u-flex"
                     @click="addProductToCart(index)"
                   >
                     <img
@@ -180,7 +180,7 @@
             </h3>
             <div
               v-if="totalOrderCount"
-              class="checkout-panel-active"
+              class="checkout-panel-active u-flex"
             >
               <ul class="checkout-items-list u-flex">
                 <li
@@ -273,7 +273,7 @@
           </div>
           <h3>Order Confirmed</h3>
           <p>We hope you enjoy your food!</p>
-          <ul class="confirmed-items-list">
+          <ul class="confirmed-items-list u-flex">
             <li
               v-for="(product,index) in parsedProducts"
               :key="product.name"
