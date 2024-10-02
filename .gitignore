@@ -1,8 +1,34 @@
-# Ignoring files in Git:
-# https://help.github.com/articles/ignoring-files/ 
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# MAC
+node_modules
 .DS_Store
+dist
+dist-ssr
+coverage
+*.local
 .vscode
 .Trashes
 .anima
+Thumbs.db
+
+/cypress/videos/
+/cypress/screenshots/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+*.tsbuildinfo
