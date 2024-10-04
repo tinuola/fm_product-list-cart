@@ -1,7 +1,14 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
 import { useProductStore } from '@/stores/ProductStore'
 
 const productStore = useProductStore()
+// const totalOrderCount = ref(0)
+const dialogRef = ref<HTMLDialogElement | null>(null)
+
+onMounted(() => {
+  dialogRef.value = document.querySelector('dialog')
+})
 
 // METHODS
 // function addProductToCart(index) {
