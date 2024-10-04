@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { useProductStore } from '@/stores/ProductStore'
+import ProductCard from './components/ProductCard.vue'
 
 const productStore = useProductStore()
+const products = productStore.products
 // const totalOrderCount = ref(0)
 const dialogRef = ref<HTMLDialogElement | null>(null)
 
@@ -71,7 +73,30 @@ onMounted(() => {
 <template>
   <div>
     <h1>Product List with Cart App</h1>
-    <pre>{{ productStore.products }}</pre>
+    <!-- <pre>{{ productStore.products }}</pre> -->
+    <header>
+      <a href="#main" class="skip">Skip to main content</a>
+      <h1 class="sr-only">Product List Cart - A Frontend Mentor Project</h1>
+    </header>
+    <main id="main">
+      <div class="app-view u-flex">
+        <section class="product-grid">
+          <h2 class="product-grid-title">Desserts</h2>
+          <ul class="product-items-list">
+            <ProductCard
+              v-for="product in products"
+              :key="product.name"
+              :class="{ selected: product.selected }"
+              :image="product.image"
+              :name="product.name"
+              :category="product.category"
+              :price="product.price"
+              :selected="product.selected"
+            />
+          </ul>
+        </section>
+      </div>
+    </main>
   </div>
 </template>
 
