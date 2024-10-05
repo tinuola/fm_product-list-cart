@@ -10,7 +10,21 @@ const products = productStore.products
 const dialogRef = ref<HTMLDialogElement | null>(null)
 
 useHead({
-  title: 'My awesome site'
+  title: 'Product List with Card - Frontend Mentor Challenge',
+  meta: [
+    {
+      name: 'description',
+      content: 'Solution to the Product List with Cart challenge on Frontend Mentor.'
+    },
+    {
+      name: 'author',
+      content: 'TechTinu'
+    },
+    {
+      name: 'theme-color',
+      content: '#c73a0f'
+    }
+  ]
 })
 
 onMounted(() => {
