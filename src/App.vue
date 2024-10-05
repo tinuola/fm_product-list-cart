@@ -72,7 +72,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <h1>Product List with Cart App</h1>
+    <!-- <h1>Product List with Cart App</h1> -->
     <!-- <pre>{{ productStore.products }}</pre> -->
     <header>
       <a href="#main" class="skip">Skip to main content</a>
