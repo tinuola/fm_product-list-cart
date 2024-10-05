@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import { useHead } from '@unhead/vue'
 import { useProductStore } from '@/stores/ProductStore'
 import ProductCard from './components/ProductCard.vue'
 
@@ -7,6 +8,10 @@ const productStore = useProductStore()
 const products = productStore.products
 // const totalOrderCount = ref(0)
 const dialogRef = ref<HTMLDialogElement | null>(null)
+
+useHead({
+  title: 'My awesome site'
+})
 
 onMounted(() => {
   dialogRef.value = document.querySelector('dialog')
