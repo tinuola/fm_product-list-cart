@@ -1,5 +1,6 @@
 @import './reset.css';
 @import './a11y.css';
+@import './fonts.css';
 
 :root {
   --primary-red: hsl(14, 86%, 42%);
