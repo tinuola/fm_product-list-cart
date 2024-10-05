@@ -11,7 +11,7 @@ const { title } = defineProps({
   <button>
     <!-- Icon slot -->
     <slot />
-    {{ title }}
+    <span>{{ title }}</span>
   </button>
 </template>
 

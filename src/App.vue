@@ -109,6 +109,7 @@ useHead({
               :name="product.name"
               :category="product.category"
               :price="product.price"
+              :quantity="product.quantity"
               :selected="product.selected"
             />
           </ul>

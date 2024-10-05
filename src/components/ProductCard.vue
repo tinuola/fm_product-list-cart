@@ -1,5 +1,6 @@
 <script setup>
-const { category, image, name, price, selected } = defineProps({
+import ButtonPrimary from './ButtonPrimary.vue'
+const { category, image, name, price, quantity, selected } = defineProps({
   image: {
     type: Object,
     default: () => {}
@@ -13,6 +14,10 @@ const { category, image, name, price, selected } = defineProps({
     default: ''
   },
   price: {
+    type: Number,
+    default: 0
+  },
+  quantity: {
     type: Number,
     default: 0
   },
@@ -34,6 +39,23 @@ const { category, image, name, price, selected } = defineProps({
       </picture>
     </div>
     <!-- Buttons -->
+    <div class="product-card-btns-group">
+      <!-- Select quantity -->
+      <div v-if="quantity" class="btn btn--sm btn__quantity u-font-medium u-flex">
+        <ButtonPrimary class="btn__decrease-qty"
+          ><img src="/images/icon-decrement-quantity.svg" alt="Decrease quantity by 1"
+        /></ButtonPrimary>
+        <span class="product-card__selected-qty">{{ quantity }}</span>
+        <ButtonPrimary class="btn__increase-qty"
+          ><img src="/images/icon-increment-quantity.svg" alt="Increase quantity by 1"
+        /></ButtonPrimary>
+      </div>
+
+      <!-- Add to cart -->
+      <ButtonPrimary v-else title="Add to Cart" class="btn btn--sm btn__add-to-cart u-flex"
+        ><img src="/images/icon-add-to-cart.svg" alt=""
+      /></ButtonPrimary>
+    </div>
     <div class="product-card-content u-flex">
       <p class="product-category">{{ category }}</p>
       <p class="product-name">{{ name }}</p>

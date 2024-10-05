@@ -11,7 +11,7 @@ const data = [
     price: 6.5,
     sku: crypto.randomUUID(),
     inventory: null,
-    quantity: 0
+    quantity: 1
   },
   {
     image: {
