@@ -9,24 +9,6 @@ const products = productStore.products
 // const totalOrderCount = ref(0)
 const dialogRef = ref<HTMLDialogElement | null>(null)
 
-useHead({
-  title: 'Product List with Card - Frontend Mentor Challenge',
-  meta: [
-    {
-      name: 'description',
-      content: 'Solution to the Product List with Cart challenge on Frontend Mentor.'
-    },
-    {
-      name: 'author',
-      content: 'TechTinu'
-    },
-    {
-      name: 'theme-color',
-      content: '#c73a0f'
-    }
-  ]
-})
-
 onMounted(() => {
   dialogRef.value = document.querySelector('dialog')
 })
@@ -87,16 +69,33 @@ onMounted(() => {
 
 //   dialogRef.value.close()
 // }
+
+useHead({
+  title: 'Product List with Card - Frontend Mentor Challenge',
+  meta: [
+    {
+      name: 'description',
+      content: 'Solution to the Product List with Cart challenge on Frontend Mentor.'
+    },
+    {
+      name: 'author',
+      content: 'TechTinu'
+    },
+    {
+      name: 'theme-color',
+      content: '#c73a0f'
+    }
+  ]
+})
 </script>
 
 <template>
-  <div>
-    <!-- <h1>Product List with Cart App</h1> -->
-    <!-- <pre>{{ productStore.products }}</pre> -->
+  <div class="site-wrapper">
     <header>
       <a href="#main" class="skip">Skip to main content</a>
       <h1 class="sr-only">Product List Cart - A Frontend Mentor Project</h1>
     </header>
+
     <main id="main">
       <div class="app-view u-flex">
         <section class="product-grid">
@@ -116,6 +115,8 @@ onMounted(() => {
         </section>
       </div>
     </main>
+
+    <footer></footer>
   </div>
 </template>
 

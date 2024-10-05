@@ -1,6 +1,4 @@
 <script setup>
-// import { useProductStore } from '@/stores/ProductStore'
-
 const { category, image, name, price, selected } = defineProps({
   image: {
     type: Object,
@@ -23,21 +21,9 @@ const { category, image, name, price, selected } = defineProps({
     default: false
   }
 })
-/*
-  image: Image
-  name: string
-  category: string
-  price: number
-  sku: string
-  inventory: null
-  quantity: number
-  selected?: boolean
-  totalItemPrice?: number
-*/
 </script>
 
 <template>
-  <!-- <li class="product-item-card" :key="name" :class="{ selected: selected }"> -->
   <li class="product-item-card">
     <div class="product-card-image-wrapper">
       <picture>
@@ -48,9 +34,6 @@ const { category, image, name, price, selected } = defineProps({
       </picture>
     </div>
     <!-- Buttons -->
-    <div class="product-card-btns-group">
-      <!-- Default add-to-cart button -->
-    </div>
     <div class="product-card-content u-flex">
       <p class="product-category">{{ category }}</p>
       <p class="product-name">{{ name }}</p>

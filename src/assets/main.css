@@ -59,6 +59,10 @@ body {
   color: var(--rose-900);
 }
 
+#app {
+  width: 100%;
+}
+
 .site-wrapper {
   display: grid;
   grid-template-rows: auto 1fr auto;
