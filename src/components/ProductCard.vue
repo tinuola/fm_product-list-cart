@@ -1,5 +1,5 @@
 <script setup>
-import ButtonPrimary from './ButtonPrimary.vue'
+import ButtonPrimary from '@/components/ButtonPrimary.vue'
 import { useProductStore } from '@/stores/ProductStore'
 
 const productStore = useProductStore()

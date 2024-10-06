@@ -356,7 +356,8 @@ body {
   justify-content: space-between;
   -moz-column-gap: 0.85rem;
   column-gap: 0.85rem;
-  max-width: 125px;
+  /* max-width: 125px; */
+  max-width: 160px;
 }
 
 /* Shared Checkout, Confirmation Styles */

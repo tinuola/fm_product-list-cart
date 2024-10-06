@@ -36,6 +36,7 @@ export const useProductStore = defineStore('products', () => {
     products.value[index].selected = true
     products.value[index].quantity = 1
     totalOrderCount.value++
+    // console.log(totalOrderCount.value)
   }
 
   function increaseProductCount(sku: string) {
@@ -44,6 +45,7 @@ export const useProductStore = defineStore('products', () => {
     products.value[index].quantity++
     recalculatePrice(index)
     totalOrderCount.value++
+    // console.log(totalOrderCount.value)
   }
 
   function decreaseProductCount(sku: string) {
@@ -80,6 +82,8 @@ export const useProductStore = defineStore('products', () => {
 
   return {
     products,
+    parsedProducts,
+    totalOrderCount,
     totalOrderPrice,
     addProductToCart,
     increaseProductCount,

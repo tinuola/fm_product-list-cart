@@ -1,16 +1,14 @@
 <script setup>
-import SelectedProduct from './SelectedProduct.vue'
+import SelectedProduct from '@/components/SelectedProduct.vue'
 import { useProductStore } from '@/stores/ProductStore'
 
 const productStore = useProductStore()
-
-const parsedProducts = productStore.parsedProducts
 </script>
 
 <template>
   <ul class="checkout-items-list u-flex">
     <SelectedProduct
-      v-for="product in parsedProducts"
+      v-for="product in productStore.parsedProducts"
       :key="product.name"
       :name="product.name"
       :price="product.price"

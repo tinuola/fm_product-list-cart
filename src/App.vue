@@ -2,17 +2,24 @@
 import { onMounted, ref } from 'vue'
 import { useHead } from '@unhead/vue'
 import { useProductStore } from '@/stores/ProductStore'
-import ProductCard from './components/ProductCard.vue'
 
+// Components
+import OrderBox from '@/components/OrderBox.vue'
+import ProductCard from '@/components/ProductCard.vue'
+import SelectedProductList from '@/components/SelectedProductList.vue'
+
+// Data
 const productStore = useProductStore()
+
 const products = productStore.products
+
+// const totalOrder = productStore.totalOrderCount
+
+// const parsedProducts = productStore.parsedProducts
+
 const dialogRef = ref<HTMLDialogElement | null>(null)
 
-onMounted(() => {
-  dialogRef.value = document.querySelector('dialog')
-})
-
-// METHODS
+// Methods
 // function confirmOrder() {
 //   dialogRef.value.showModal()
 // }
@@ -28,6 +35,10 @@ onMounted(() => {
 
 //   dialogRef.value.close()
 // }
+
+onMounted(() => {
+  dialogRef.value = document.querySelector('dialog')
+})
 
 useHead({
   title: 'Product List with Card - Frontend Mentor Challenge',
@@ -75,6 +86,50 @@ useHead({
             <!-- Emit version -->
             <!-- @add-to-cart="addToCartHandler(product.sku)" -->
           </ul>
+        </section>
+
+        <!-- Checkout Box -->
+        <section class="checkout-panel" :class="{ sticky: productStore.totalOrderCount }">
+          <OrderBox v-if="productStore.totalOrderCount">
+            <template #header
+              ><h3 class="checkout-panel-title">
+                Your Cart (<span class="checkout__total-qty">{{
+                  productStore.totalOrderCount
+                }}</span
+                >)
+              </h3></template
+            >
+            <template #body>
+              <div class="checkout-panel-active u-flex">
+                <SelectedProductList />
+              </div>
+            </template>
+          </OrderBox>
+
+          <!-- Display if no item is selected -->
+          <OrderBox v-else>
+            <template #header
+              ><h3 class="checkout-panel-title">
+                Your Cart (<span class="checkout__total-qty">{{
+                  productStore.totalOrderCount
+                }}</span
+                >)
+              </h3></template
+            >
+            <template #body>
+              <div class="checkout-panel-empty">
+                <div class="checkout-panel-empty-image-wrapper">
+                  <img
+                    src="/images/illustration-empty-cart.svg"
+                    alt="Cake with a slice removed"
+                    width="128"
+                    height="128"
+                  />
+                </div>
+                <p>Your added items will appear here.</p>
+              </div>
+            </template>
+          </OrderBox>
         </section>
       </div>
     </main>
