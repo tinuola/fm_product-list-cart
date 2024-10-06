@@ -1,9 +1,17 @@
-<script setup>
+<script setup lang="ts">
 import ButtonPrimary from '@/components/ButtonPrimary.vue'
 import OrderBox from '@/components/OrderBox.vue'
 import SelectedProductList from '@/components/SelectedProductList.vue'
 
-defineEmits(['newOrder'])
+// defineEmits(['newOrder'])
+
+const emit = defineEmits<{
+  (e: 'newOrder'): void
+}>()
+
+function newOrder() {
+  emit('newOrder')
+}
 </script>
 
 <template>
@@ -25,8 +33,9 @@ defineEmits(['newOrder'])
         <ButtonPrimary
           class="btn btn--lg btn__new-order u-font-medium"
           id="confirm-order-btn"
-          @click="$emit('newOrder')"
+          @click="newOrder"
         >
+          <!-- @click="$emit('newOrder')" -->
           Start New Order
         </ButtonPrimary>
       </template>
