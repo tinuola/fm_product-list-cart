@@ -228,7 +228,7 @@ body {
 .btn__add-to-cart:hover {
   border-color: var(--primary-red);
   transition: 0.2s scale ease-out;
-  scale: 0.975;
+  /* scale: 0.975; */
 }
 
 .btn__add-to-cart img {
@@ -243,6 +243,11 @@ body {
 
 .btn__add-to-cart:hover span {
   color: var(--primary-red);
+}
+
+.btn__add-to-cart:hover img {
+  -webkit-animation: 0.5s linear 2 moveIcon;
+  animation: 0.5s linear 2 moveIcon;
 }
 
 .btn__quantity {
@@ -282,6 +287,25 @@ body {
     brightness(111%) contrast(103%);
 }
 
+@-webkit-keyframes moveIcon {
+  0% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveIcon {
+  0% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
 /******************/
 /* Checkout Panel */
 /******************/
@@ -354,11 +378,8 @@ body {
 }
 
 .checkout-item-data {
-  /* justify-content: space-between; */
   -moz-column-gap: 0.85rem;
   column-gap: 0.85rem;
-  /* max-width: 125px; */
-  /* max-width: 160px; */
 }
 
 /* Shared Checkout, Confirmation Styles */
