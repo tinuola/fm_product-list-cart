@@ -2,6 +2,10 @@
 import ButtonPrimary from './ButtonPrimary.vue'
 import { useProductStore } from '@/stores/ProductStore'
 
+const productStore = useProductStore()
+
+// defineEmits(['addToCart'])
+
 const { category, image, name, price, quantity, selected, sku } = defineProps({
   image: {
     type: Object,
@@ -32,10 +36,6 @@ const { category, image, name, price, quantity, selected, sku } = defineProps({
     default: ''
   }
 })
-
-const productStore = useProductStore()
-
-// defineEmits(['addToCart'])
 </script>
 
 <template>
