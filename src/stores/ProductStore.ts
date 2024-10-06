@@ -8,8 +8,21 @@ export const useProductStore = defineStore('products', () => {
 
   const totalOrderCount = ref(0)
 
+  const parsedProducts = computed(() => {
+    // Track selected products
+    const selectedProducts = products.value.filter((obj) => obj.selected === true)
+
+    // Create key to track/calculate total price of a selected product as its quantity changes
+    const selectedProductsTotalPrices = selectedProducts.map((obj) => {
+      const totalItemPrice = obj.quantity * obj.price
+      return { ...obj, totalItemPrice }
+    })
+
+    return selectedProductsTotalPrices
+  })
+
   const totalOrderPrice = computed(() => {
-    const calcTotalOrderPrice = products.value.reduce((a, b) => {
+    const calcTotalOrderPrice = parsedProducts.value.reduce((a, b) => {
       return a + (b.totalItemPrice ?? 0)
     }, 0)
 
@@ -67,6 +80,7 @@ export const useProductStore = defineStore('products', () => {
 
   return {
     products,
+    parsedProducts,
     totalOrderCount,
     totalOrderPrice,
     addProductToCart,
