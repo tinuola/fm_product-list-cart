@@ -142,7 +142,7 @@ useHead({
       </div>
 
       <!-- Confirmation Modal -->
-      <ModalBox ref="dialog-ref" @new-order="startNewOrder" />
+      <!-- <ModalBox ref="dialog-ref" @new-order="startNewOrder" /> -->
     </main>
 
     <FooterPrimary />

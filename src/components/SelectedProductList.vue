@@ -13,8 +13,8 @@ const { isConfirmed } = defineProps({
 </script>
 
 <template>
-  <div class="checkout-panel-active u-flex">
-    <ul class="checkout-items-list u-flex">
+  <div class="order-box-active u-flex">
+    <ul class="selected-product-list u-flex">
       <SelectedProduct
         v-for="product in productStore.selectedProducts"
         :key="product.name"
@@ -24,11 +24,11 @@ const { isConfirmed } = defineProps({
         :total-item-price="product.totalItemPrice"
         :is-confirmed="isConfirmed"
       >
-        <template v-if="isConfirmed" #slotLeft>
+        <!-- <template v-if="isConfirmed" #slotLeft>
           <div class="confirmed-item-image-wrapper">
             <img :src="product.image.thumbnail" alt="" />
           </div>
-        </template>
+        </template> -->
 
         <template v-if="isConfirmed" #slotRight>
           <span class="checkout-item-total-price"
@@ -37,7 +37,7 @@ const { isConfirmed } = defineProps({
         </template>
         <template v-else #slotRight>
           <div
-            class="checkout-item-cancel-icon"
+            class="selected-product-cancel-icon"
             @click="productStore.removeProductFromCart(product.sku)"
           >
             <img src="/images/icon-remove-item.svg" alt="Remove item from cart" /></div

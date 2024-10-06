@@ -27,18 +27,18 @@ const { isConfirmed, name, price, quantity, totalItemPrice } = defineProps({
   <li>
     <slot name="slotLeft"></slot>
 
-    <div class="checkout-item u-flex">
-      <div class="checkout-item-body">
+    <div class="selected-product u-flex">
+      <div class="selected-product-body">
         <p class="u-font-medium">{{ name }}</p>
-        <div class="checkout-item-data u-flex u-font-medium">
-          <span class="checkout-item-qty"
+        <div class="selected-product-data u-flex u-font-medium">
+          <span class="selected-product-qty"
             ><span>{{ quantity }}</span
             >x</span
           >
-          <span class="checkout-item-price"
+          <span class="selected-product-price"
             ><span>@</span> <span>$</span>{{ price.toFixed(2) }}</span
           >
-          <span v-if="!isConfirmed" class="checkout-item-total-price"
+          <span v-if="!isConfirmed" class="selected-product-total-price"
             ><span>$</span>{{ totalItemPrice.toFixed(2) }}</span
           >
         </div>

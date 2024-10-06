@@ -307,11 +307,9 @@ body {
   }
 }
 /******************/
-/* Checkout Panel */
 /* Order Box */
 /******************/
 
-/* .checkout-panel, */
 .order-box {
   flex-basis: 100%;
   background-color: var(--white);
@@ -320,7 +318,6 @@ body {
 }
 
 @media only screen and (max-width: 799px) {
-  /* .sticky.checkout-panel, */
   .sticky.order-box {
     border: 2px solid var(--rose-100);
     position: -webkit-sticky;
@@ -332,7 +329,6 @@ body {
 }
 
 @media only screen and (min-width: 800px) {
-  /* .checkout-panel, */
   .order-box {
     flex-basis: 39%;
     align-self: baseline;
@@ -340,77 +336,74 @@ body {
 }
 
 @media only screen and (min-width: 1066px) {
-  /* .checkout-panel, */
   .order-box {
     flex-basis: 30%;
   }
 }
 
-/* .checkout-panel-title, */
 .order-box-title {
   color: var(--primary-red);
   margin-bottom: 1.5rem;
 }
 
-/* .checkout-panel-empty img, */
 .order-box-empty img {
   margin: 0 auto 1rem auto;
 }
 
-/* .checkout-panel-empty p, */
 .order-box-empty p {
   color: var(--rose-500);
   font-size: 0.875rem;
   text-align: center;
 }
 
-/* .checkout-panel-active, */
 .order-box-active {
   flex-direction: column;
   row-gap: 1.5rem;
 }
 
-.checkout-items-list {
+.selected-product-list {
   flex-direction: column;
   row-gap: 1rem;
 }
 
-.checkout-item {
+.selected-product {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--rose-100);
   padding-bottom: 0.65rem;
 }
 
-.checkout-item-body p {
+.checkout-item-body p,
+.selected-product-body p {
   margin-bottom: 0.25rem;
 }
 
-.checkout-item-data {
+.checkout-item-data,
+.selected-product-data {
   -moz-column-gap: 0.85rem;
   column-gap: 0.85rem;
 }
 
 /* Shared Checkout, Confirmation Styles */
 
-.checkout-item-qty {
+.selected-product-qty {
   color: var(--primary-red);
 }
 
-.checkout-item-qty--confirmed {
+.selected-product-qty--confirmed {
   margin-right: 0.75rem;
 }
 
-.checkout-item-price,
-.checkout-item-total-price {
+.selected-product-price,
+.selected-product-total-price {
   color: var(--rose-500);
 }
 
-.checkout-item-price {
+.selected-product-price {
   font-weight: 400;
 }
 
-.checkout-item-total-price {
+.selected-product-total-price {
   font-weight: 600;
 }
 
@@ -425,7 +418,7 @@ body {
 }
 /* End Shared Checkout, Confirmation Styles */
 
-.checkout-item-cancel-icon {
+.selected-product-cancel-icon {
   border: 1px solid var(--rose-300);
   border-radius: 50%;
   padding: 0.175rem;
@@ -449,6 +442,10 @@ body {
   vertical-align: text-top;
   margin-right: 0.25rem;
 }
+
+/*********************/
+/* Order Box Buttons */
+/*********************/
 
 .btn__checkout:hover {
   background-color: var(--primary-red-hover);
