@@ -35,7 +35,7 @@ const { image, name, price, quantity, selected, sku, totalItemPrice } = definePr
   <div>
     <li>
       <!-- Left Slot -->
-      <slot name="image"></slot>
+      <slot name="slotLeft"></slot>
       <div class="checkout-item u-flex">
         <div class="checkout-item-body">
           <p class="u-font-medium">{{ name }}</p>
@@ -53,7 +53,7 @@ const { image, name, price, quantity, selected, sku, totalItemPrice } = definePr
           </div>
         </div>
         <!-- Right Slot -->
-        <slot name="icon"></slot>
+        <slot name="slotRight"></slot>
         <!-- <div class="checkout-item-cancel-icon" @click="productStore.removeProductFromCart(sku)">
           <img src="assets/images/icon-remove-item.svg" alt="Remove item from cart" />
         </div> -->

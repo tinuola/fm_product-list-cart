@@ -3,6 +3,13 @@ import SelectedProduct from '@/components/SelectedProduct.vue'
 import { useProductStore } from '@/stores/ProductStore'
 
 const productStore = useProductStore()
+
+const { isConfirmed } = defineProps({
+  isConfirmed: {
+    type: Boolean,
+    default: false
+  }
+})
 </script>
 
 <template>
@@ -18,7 +25,16 @@ const productStore = useProductStore()
         :selected="product.selected"
         :total-item-price="product.totalItemPrice"
       >
-        <template #icon>
+        <template v-if="isConfirmed" #slotLeft>
+          <div class="confirmed-item-image-wrapper">
+            <img :src="product.image.thumbnail" alt="" />
+          </div>
+        </template>
+
+        <template v-if="isConfirmed" #slotRight>
+          $<span>{{ product.totalItemPrice.toFixed(2) }}</span>
+        </template>
+        <template v-else #slotRight>
           <div
             class="checkout-item-cancel-icon"
             @click="productStore.removeProductFromCart(product.sku)"

@@ -16,21 +16,21 @@ const products = productStore.products
 const dialogRef = ref<HTMLDialogElement | null>(null)
 
 // Methods
-// function confirmOrder() {
-//   dialogRef.value.showModal()
-// }
+function confirmOrder() {
+  dialogRef.value?.showModal()
+}
 
-// function startNewOrder() {
-//   // Reset app data
-//   products.value.forEach((obj) => {
-//     obj.selected = false
-//     obj.quantity = 0
-//   })
+function startNewOrder() {
+  // Reset app data
+  productStore.products.forEach((obj) => {
+    obj.selected = false
+    obj.quantity = 0
+  })
 
-//   totalOrderCount.value = 0
+  productStore.totalOrderCount = 0
 
-//   dialogRef.value.close()
-// }
+  dialogRef.value?.close()
+}
 
 onMounted(() => {
   dialogRef.value = document.querySelector('dialog')
@@ -107,6 +107,13 @@ useHead({
                   <span class="u-font-medium">carbon-neutral</span> delivery
                 </p>
               </div>
+              <ButtonPrimary
+                class="btn btn--lg btn__checkout u-font-medium"
+                id="confirm-order-btn"
+                @click="confirmOrder"
+              >
+                Confirm Order
+              </ButtonPrimary>
             </template>
           </OrderBox>
 
@@ -136,6 +143,31 @@ useHead({
           </OrderBox>
         </section>
       </div>
+
+      <!-- Confirmation Modal -->
+      <dialog class="confirmation-modal" ref="dialog-ref">
+        <OrderBox>
+          <template #header>
+            <div class="confirmation-icon-wrapper">
+              <img src="/images/icon-order-confirmed.svg" alt="Order confirmed icon" />
+            </div>
+            <h3>Order Confirmed</h3>
+            <p>We hope you enjoy your food!</p>
+          </template>
+          <template #body>
+            <SelectedProductList :is-confirmed="true" />
+          </template>
+          <template #footer>
+            <ButtonPrimary
+              class="btn btn--lg btn__new-order u-font-medium"
+              id="confirm-order-btn"
+              @click="startNewOrder"
+            >
+              Start New Order
+            </ButtonPrimary>
+          </template>
+        </OrderBox>
+      </dialog>
     </main>
 
     <footer></footer>
