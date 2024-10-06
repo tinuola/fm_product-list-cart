@@ -38,20 +38,24 @@ export const useProductStore = defineStore('products', () => {
     totalOrderCount.value++
   }
 
-  function increaseProductCount(idx: number) {
-    products.value[idx].quantity++
-    recalculatePrice(idx)
+  function increaseProductCount(sku: string) {
+    const index = findSkuIndex(sku)
+
+    products.value[index].quantity++
+    recalculatePrice(index)
     totalOrderCount.value++
   }
 
-  function decreaseProductCount(idx: number) {
-    products.value[idx].quantity--
-    recalculatePrice(idx)
+  function decreaseProductCount(sku: string) {
+    const index = findSkuIndex(sku)
+
+    products.value[index].quantity--
+    recalculatePrice(index)
     totalOrderCount.value--
 
     // Trigger removal of 'selected' class
-    if (products.value[idx].quantity === 0) {
-      products.value[idx].selected = false
+    if (products.value[index].quantity === 0) {
+      products.value[index].selected = false
     }
   }
 
@@ -60,14 +64,14 @@ export const useProductStore = defineStore('products', () => {
       products.value[idx].quantity * products.value[idx].price)
   }
 
-  function removeProductFromCart(idx: number, itemId: string) {
-    const skuIndex = products.value.findIndex((prodObj) => prodObj.sku === itemId)
+  function removeProductFromCart(sku: string) {
+    const index = findSkuIndex(sku)
 
-    totalOrderCount.value -= parsedProducts.value[idx].quantity
+    totalOrderCount.value -= parsedProducts.value[index].quantity
 
-    products.value[skuIndex].selected = false
+    products.value[index].selected = false
 
-    products.value[skuIndex].quantity = 0
+    products.value[index].quantity = 0
   }
 
   function findSkuIndex(sku: string) {
