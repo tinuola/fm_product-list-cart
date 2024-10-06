@@ -1,13 +1,13 @@
 <script setup></script>
 
 <template>
-  <div>
+  <section class="order-box">
     <slot name="header"></slot>
 
     <slot name="body"></slot>
 
     <slot name="footer"></slot>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped></style>

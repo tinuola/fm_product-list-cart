@@ -83,63 +83,62 @@ useHead({
         </section>
 
         <!-- Checkout Box -->
-        <section class="checkout-panel" :class="{ sticky: productStore.totalOrderCount }">
-          <OrderBox v-if="productStore.totalOrderCount">
-            <template #header
-              ><h3 class="checkout-panel-title">
-                Your Cart (<span class="checkout__total-qty">{{
-                  productStore.totalOrderCount
-                }}</span
-                >)
-              </h3></template
-            >
-            <template #body>
-              <!-- <div class="checkout-panel-active u-flex"> -->
-              <SelectedProductList />
-              <!-- </div> -->
-            </template>
-            <template #footer>
-              <div class="checkout--submessage">
-                <p>
-                  This is a
-                  <span class="u-font-medium">carbon-neutral</span> delivery
-                </p>
-              </div>
-              <ButtonPrimary
-                class="btn btn--lg btn__checkout u-font-medium"
-                id="confirm-order-btn"
-                @click="confirmOrder"
-              >
-                Confirm Order
-              </ButtonPrimary>
-            </template>
-          </OrderBox>
+        <!-- <section class="checkout-panel" :class="{ sticky: productStore.totalOrderCount }"> -->
+        <OrderBox
+          v-if="productStore.totalOrderCount"
+          :class="{ sticky: productStore.totalOrderCount }"
+        >
+          <template #header
+            ><h3 class="order-box-title">
+              Your Cart (<span class="checkout__total-qty">{{ productStore.totalOrderCount }}</span
+              >)
+            </h3></template
+          >
 
-          <!-- Display if no item is selected -->
-          <OrderBox v-else>
-            <template #header
-              ><h3 class="checkout-panel-title">
-                Your Cart (<span class="checkout__total-qty">{{
-                  productStore.totalOrderCount
-                }}</span
-                >)
-              </h3></template
+          <template #body>
+            <SelectedProductList />
+          </template>
+
+          <template #footer>
+            <div class="checkout--submessage">
+              <p>
+                This is a
+                <span class="u-font-medium">carbon-neutral</span> delivery
+              </p>
+            </div>
+            <ButtonPrimary
+              class="btn btn--lg btn__checkout u-font-medium"
+              id="confirm-order-btn"
+              @click="confirmOrder"
             >
-            <template #body>
-              <div class="checkout-panel-empty">
-                <div class="checkout-panel-empty-image-wrapper">
-                  <img
-                    src="/images/illustration-empty-cart.svg"
-                    alt="Cake with a slice removed"
-                    width="128"
-                    height="128"
-                  />
-                </div>
-                <p>Your added items will appear here.</p>
+              Confirm Order
+            </ButtonPrimary>
+          </template>
+        </OrderBox>
+
+        <!-- Display if no item is selected -->
+        <OrderBox v-else>
+          <template #header
+            ><h3 class="order-box-title">
+              Your Cart (<span class="checkout__total-qty">{{ productStore.totalOrderCount }}</span
+              >)
+            </h3></template
+          >
+          <template #body>
+            <div class="order-box-empty">
+              <div class="checkout-panel-empty-image-wrapper">
+                <img
+                  src="/images/illustration-empty-cart.svg"
+                  alt="Cake with a slice removed"
+                  width="128"
+                  height="128"
+                />
               </div>
-            </template>
-          </OrderBox>
-        </section>
+              <p>Your added items will appear here.</p>
+            </div>
+          </template>
+        </OrderBox>
+        <!-- </section> -->
       </div>
 
       <!-- Confirmation Modal -->

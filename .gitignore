@@ -17,6 +17,7 @@ coverage
 .Trashes
 .anima
 Thumbs.db
+.vite
 
 /cypress/videos/
 /cypress/screenshots/
