@@ -1,12 +1,15 @@
-<script setup>
+<script setup lang="ts">
 import ButtonPrimary from '@/components/ButtonPrimary.vue'
+import type { PropType } from 'vue'
+import type { Image } from '@/types'
+
 import { useProductStore } from '@/stores/ProductStore'
 
 const productStore = useProductStore()
 
 const { category, image, name, price, quantity, sku } = defineProps({
   image: {
-    type: Object,
+    type: Object as PropType<Image>,
     default: () => {}
   },
   name: {

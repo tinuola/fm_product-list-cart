@@ -10,7 +10,7 @@ export type Product = {
   totalItemPrice?: number
 }
 
-type Image = {
+export type Image = {
   thumbnail: string
   mobile: string
   tablet: string
