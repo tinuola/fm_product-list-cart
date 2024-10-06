@@ -1,38 +1,58 @@
-# product-list-app
+## Frontend Mentor: Product Cart
 
-This template should help get you started developing with Vue 3 in Vite.
+Solution to the _[Product List with Cart](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d)_ challenge on Frontend Mentor.
 
-## Recommended IDE Setup
+### Challenge
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Build out a Product List using provided [desktop](/assets/design/01_preview.jpg) and [mobile](/assets/design/06_mobile-design-empty.jpg) designs
+- Users should be able to:
 
-## Type Support for `.vue` Imports in TS
+  - [Add items to the cart](/assets/design/04_desktop-design-selected.jpg) and remove them
+  - Increase/decrease the number of items in the cart
+  - See an [order confirmation modal](/assets/design/05_desktop-design-order-confirmation.jpg) when they click "Confirm Order"
+  - [Reset their selections](/assets/design/02_desktop-design-empty.jpg) when they click "Start New Order"
+  - View the optimal layout for the interface depending on their device's screen size
+  - See hover and focus states for all interactive elements on the page
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### Solution
 
-## Customize configuration
+Live Sites:
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- Build (SFC) version: [tt-fm-product-list-cart.netlify.app](https://tt-fm-product-list-cart.netlify.app/)
 
-## Project Setup
+- CDN version: [tinuola.github.io/fm_product-list-cart/](https://tinuola.github.io/fm_product-list-cart/)
+  - _[CDN Branch](https://github.com/tinuola/fm_product-list-cart/tree/cdnBuild)_
+
+### Retrospective
+
+- Vue 3 practice using CDN build and Single File Component (App) build; both with Composition API
+- Updated color specs to improve on contrast ratios
+- Mini-utility CSS styles to reduce repeated styles
+
+### Tools & Resources
+
+- HTML, CSS, JavaScript
+- Vue 3
+
+### Project Setup
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+Compile and Hot-Reload for Development
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+Type-Check, Compile and Minify for Production
 
 ```sh
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+Lint with [ESLint](https://eslint.org/)
 
 ```sh
 npm run lint

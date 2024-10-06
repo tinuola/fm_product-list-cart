@@ -5,6 +5,7 @@ import { useProductStore } from '@/stores/ProductStore'
 const productStore = useProductStore()
 
 const { isConfirmed } = defineProps({
+  // Flag for Confirmation Modal layout
   isConfirmed: {
     type: Boolean,
     default: false

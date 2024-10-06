@@ -83,7 +83,6 @@ useHead({
         </section>
 
         <!-- Checkout Box -->
-        <!-- <section class="checkout-panel" :class="{ sticky: productStore.totalOrderCount }"> -->
         <OrderBox
           v-if="productStore.totalOrderCount"
           :class="{ sticky: productStore.totalOrderCount }"
@@ -138,7 +137,6 @@ useHead({
             </div>
           </template>
         </OrderBox>
-        <!-- </section> -->
       </div>
 
       <!-- Confirmation Modal -->

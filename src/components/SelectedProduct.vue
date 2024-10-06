@@ -23,7 +23,6 @@ const { isConfirmed, name, price, quantity, totalItemPrice } = defineProps({
 })
 </script>
 
-<!-- :class="{ sticky: isConfirmed }" -->
 <template>
   <li>
     <slot name="slotLeft"></slot>
