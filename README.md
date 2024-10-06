@@ -18,10 +18,9 @@ Solution to the _[Product List with Cart](https://www.frontendmentor.io/challeng
 
 Live Sites:
 
-- Build (SFC) version: [tt-fm-product-list-cart.netlify.app](https://tt-fm-product-list-cart.netlify.app/)
+- Build (SFC) version: [tt-fm-product-list-cart.netlify.app](https://tt-fm-product-list-cart.netlify.app/) _(Current branch)_
 
-- CDN version: [tinuola.github.io/fm_product-list-cart/](https://tinuola.github.io/fm_product-list-cart/)
-  - _[CDN Branch](https://github.com/tinuola/fm_product-list-cart/tree/cdnBuild)_
+- CDN version: [tinuola.github.io/fm_product-list-cart](https://tinuola.github.io/fm_product-list-cart/) _([CDN branch](https://github.com/tinuola/fm_product-list-cart/tree/cdnBuild))_
 
 ### Retrospective
 
