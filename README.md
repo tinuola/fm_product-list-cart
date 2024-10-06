@@ -31,7 +31,8 @@ Live Sites:
 ### Tools & Resources
 
 - HTML, CSS, JavaScript
-- Vue 3
+- Vue 3, Pinia
+- TypeScript
 
 ### Project Setup
 
