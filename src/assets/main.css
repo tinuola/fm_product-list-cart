@@ -413,7 +413,7 @@ body {
 }
 
 .checkout--submessage p::before {
-  content: url('../assets/images/icon-carbon-neutral.svg');
+  content: url('/images/icon-carbon-neutral.svg');
   vertical-align: text-top;
   margin-right: 0.25rem;
 }

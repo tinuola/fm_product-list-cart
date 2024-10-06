@@ -16,13 +16,11 @@ const { isConfirmed } = defineProps({
   <div class="checkout-panel-active u-flex">
     <ul class="checkout-items-list u-flex">
       <SelectedProduct
-        v-for="product in productStore.parsedProducts"
+        v-for="product in productStore.selectedProducts"
         :key="product.name"
         :name="product.name"
         :price="product.price"
         :quantity="product.quantity"
-        :sku="product.sku"
-        :selected="product.selected"
         :total-item-price="product.totalItemPrice"
       >
         <template v-if="isConfirmed" #slotLeft>

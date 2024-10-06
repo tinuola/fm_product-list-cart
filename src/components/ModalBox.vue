@@ -6,7 +6,6 @@ import SelectedProductList from '@/components/SelectedProductList.vue'
 defineEmits(['newOrder'])
 </script>
 
-<!--  -->
 <template>
   <dialog class="confirmation-modal">
     <OrderBox>
@@ -17,9 +16,11 @@ defineEmits(['newOrder'])
         <h3>Order Confirmed</h3>
         <p>We hope you enjoy your food!</p>
       </template>
+
       <template #body>
         <SelectedProductList :is-confirmed="true" />
       </template>
+
       <template #footer>
         <ButtonPrimary
           class="btn btn--lg btn__new-order u-font-medium"

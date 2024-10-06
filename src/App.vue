@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue'
 import { useHead } from '@unhead/vue'
 import { useProductStore } from '@/stores/ProductStore'
 
-// Components
+// COMPONENTS
 import ButtonPrimary from '@/components/ButtonPrimary.vue'
 import FooterPrimary from '@/components/FooterPrimary.vue'
 import ModalBox from '@/components/ModalBox.vue'
@@ -11,14 +11,12 @@ import OrderBox from '@/components/OrderBox.vue'
 import ProductCard from '@/components/ProductCard.vue'
 import SelectedProductList from '@/components/SelectedProductList.vue'
 
-// Data
+// DATA
 const productStore = useProductStore()
-
 const products = productStore.products
-
 const dialogRef = ref<HTMLDialogElement | null>(null)
 
-// Methods
+// METHODS
 function confirmOrder() {
   dialogRef.value?.showModal()
 }
@@ -80,10 +78,7 @@ useHead({
               :price="product.price"
               :quantity="product.quantity"
               :sku="product.sku"
-              :selected="product.selected"
             />
-            <!-- Emit version -->
-            <!-- @add-to-cart="addToCartHandler(product.sku)" -->
           </ul>
         </section>
 

@@ -1,9 +1,5 @@
 <script setup>
-const { image, name, price, quantity, selected, sku, totalItemPrice } = defineProps({
-  image: {
-    type: Object,
-    default: () => {}
-  },
+const { name, price, quantity, totalItemPrice } = defineProps({
   name: {
     type: String,
     default: ''
@@ -16,14 +12,6 @@ const { image, name, price, quantity, selected, sku, totalItemPrice } = definePr
     type: Number,
     default: 0
   },
-  selected: {
-    type: Boolean,
-    default: false
-  },
-  sku: {
-    type: String,
-    default: ''
-  },
   totalItemPrice: {
     type: Number,
     default: 0
@@ -34,8 +22,8 @@ const { image, name, price, quantity, selected, sku, totalItemPrice } = definePr
 <template>
   <div>
     <li>
-      <!-- Left Slot -->
       <slot name="slotLeft"></slot>
+
       <div class="checkout-item u-flex">
         <div class="checkout-item-body">
           <p class="u-font-medium">{{ name }}</p>
@@ -52,11 +40,8 @@ const { image, name, price, quantity, selected, sku, totalItemPrice } = definePr
             >
           </div>
         </div>
-        <!-- Right Slot -->
+
         <slot name="slotRight"></slot>
-        <!-- <div class="checkout-item-cancel-icon" @click="productStore.removeProductFromCart(sku)">
-          <img src="assets/images/icon-remove-item.svg" alt="Remove item from cart" />
-        </div> -->
       </div>
     </li>
   </div>

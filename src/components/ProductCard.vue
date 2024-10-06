@@ -4,9 +4,7 @@ import { useProductStore } from '@/stores/ProductStore'
 
 const productStore = useProductStore()
 
-// defineEmits(['addToCart'])
-
-const { category, image, name, price, quantity, selected, sku } = defineProps({
+const { category, image, name, price, quantity, sku } = defineProps({
   image: {
     type: Object,
     default: () => {}
@@ -27,10 +25,6 @@ const { category, image, name, price, quantity, selected, sku } = defineProps({
     type: Number,
     default: 0
   },
-  selected: {
-    type: Boolean,
-    default: false
-  },
   sku: {
     type: String,
     default: ''
@@ -48,6 +42,7 @@ const { category, image, name, price, quantity, selected, sku } = defineProps({
         <img :src="image.desktop" :alt="name" width="502" height="480" />
       </picture>
     </div>
+
     <!-- Buttons -->
     <div class="product-card-btns-group">
       <!-- Select quantity -->
@@ -55,7 +50,9 @@ const { category, image, name, price, quantity, selected, sku } = defineProps({
         <ButtonPrimary class="btn__decrease-qty" @click="productStore.decreaseProductCount(sku)"
           ><img src="/images/icon-decrement-quantity.svg" alt="Decrease quantity by 1"
         /></ButtonPrimary>
+
         <span class="product-card__selected-qty">{{ quantity }}</span>
+
         <ButtonPrimary class="btn__increase-qty" @click="productStore.increaseProductCount(sku)"
           ><img src="/images/icon-increment-quantity.svg" alt="Increase quantity by 1"
         /></ButtonPrimary>
@@ -69,9 +66,8 @@ const { category, image, name, price, quantity, selected, sku } = defineProps({
         @click="productStore.addProductToCart(sku)"
         ><img src="/images/icon-add-to-cart.svg" alt=""
       /></ButtonPrimary>
-      <!-- Emit version -->
-      <!-- @click="$emit('addToCart', sku)" -->
     </div>
+
     <div class="product-card-content u-flex">
       <p class="product-category">{{ category }}</p>
       <p class="product-name">{{ name }}</p>
