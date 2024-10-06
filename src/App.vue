@@ -110,8 +110,11 @@ useHead({
               :category="product.category"
               :price="product.price"
               :quantity="product.quantity"
+              :sku="product.sku"
               :selected="product.selected"
             />
+            <!-- Emit version -->
+            <!-- @add-to-cart="addToCartHandler(product.sku)" -->
           </ul>
         </section>
       </div>

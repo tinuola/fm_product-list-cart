@@ -1,6 +1,8 @@
 <script setup>
 import ButtonPrimary from './ButtonPrimary.vue'
-const { category, image, name, price, quantity, selected } = defineProps({
+import { useProductStore } from '@/stores/ProductStore'
+
+const { category, image, name, price, quantity, selected, sku } = defineProps({
   image: {
     type: Object,
     default: () => {}
@@ -24,8 +26,16 @@ const { category, image, name, price, quantity, selected } = defineProps({
   selected: {
     type: Boolean,
     default: false
+  },
+  sku: {
+    type: String,
+    default: ''
   }
 })
+
+const productStore = useProductStore()
+
+// defineEmits(['addToCart'])
 </script>
 
 <template>
@@ -52,9 +62,15 @@ const { category, image, name, price, quantity, selected } = defineProps({
       </div>
 
       <!-- Add to cart -->
-      <ButtonPrimary v-else title="Add to Cart" class="btn btn--sm btn__add-to-cart u-flex"
+      <ButtonPrimary
+        v-else
+        title="Add to Cart"
+        class="btn btn--sm btn__add-to-cart u-flex"
+        @click="productStore.addProductToCart(sku)"
         ><img src="/images/icon-add-to-cart.svg" alt=""
       /></ButtonPrimary>
+      <!-- Emit version -->
+      <!-- @click="$emit('addToCart', sku)" -->
     </div>
     <div class="product-card-content u-flex">
       <p class="product-category">{{ category }}</p>

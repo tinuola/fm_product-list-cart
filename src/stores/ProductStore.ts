@@ -30,7 +30,9 @@ export const useProductStore = defineStore('products', () => {
   })
 
   // METHODS
-  function addProductToCart(index: number) {
+  function addProductToCart(sku: string) {
+    const index = findSkuIndex(sku)
+
     products.value[index].selected = true
     products.value[index].quantity = 1
     totalOrderCount.value++
@@ -66,6 +68,10 @@ export const useProductStore = defineStore('products', () => {
     products.value[skuIndex].selected = false
 
     products.value[skuIndex].quantity = 0
+  }
+
+  function findSkuIndex(sku: string) {
+    return products.value.findIndex((obj) => obj.sku === sku)
   }
 
   return {
