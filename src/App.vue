@@ -13,10 +13,6 @@ const productStore = useProductStore()
 
 const products = productStore.products
 
-// const totalOrder = productStore.totalOrderCount
-
-// const parsedProducts = productStore.parsedProducts
-
 const dialogRef = ref<HTMLDialogElement | null>(null)
 
 // Methods
@@ -100,8 +96,16 @@ useHead({
               </h3></template
             >
             <template #body>
-              <div class="checkout-panel-active u-flex">
-                <SelectedProductList />
+              <!-- <div class="checkout-panel-active u-flex"> -->
+              <SelectedProductList />
+              <!-- </div> -->
+            </template>
+            <template #footer>
+              <div class="checkout--submessage">
+                <p>
+                  This is a
+                  <span class="u-font-medium">carbon-neutral</span> delivery
+                </p>
               </div>
             </template>
           </OrderBox>

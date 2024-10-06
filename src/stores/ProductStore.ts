@@ -8,22 +8,9 @@ export const useProductStore = defineStore('products', () => {
 
   const totalOrderCount = ref(0)
 
-  const parsedProducts = computed(() => {
-    // Track selected products
-    const selectedProducts = products.value.filter((obj) => obj.selected === true)
-
-    // Create key to track/calculate total price of a selected product as its quantity changes
-    const selectedProductsTotalPrices = selectedProducts.map((obj) => {
-      const totalItemPrice = obj.quantity * obj.price
-      return { ...obj, totalItemPrice }
-    })
-
-    return selectedProductsTotalPrices
-  })
-
   const totalOrderPrice = computed(() => {
-    const calcTotalOrderPrice = parsedProducts.value.reduce((a, b) => {
-      return a + b.totalItemPrice
+    const calcTotalOrderPrice = products.value.reduce((a, b) => {
+      return a + (b.totalItemPrice ?? 0)
     }, 0)
 
     return calcTotalOrderPrice.toFixed(2)
@@ -36,7 +23,6 @@ export const useProductStore = defineStore('products', () => {
     products.value[index].selected = true
     products.value[index].quantity = 1
     totalOrderCount.value++
-    // console.log(totalOrderCount.value)
   }
 
   function increaseProductCount(sku: string) {
@@ -45,7 +31,6 @@ export const useProductStore = defineStore('products', () => {
     products.value[index].quantity++
     recalculatePrice(index)
     totalOrderCount.value++
-    // console.log(totalOrderCount.value)
   }
 
   function decreaseProductCount(sku: string) {
@@ -69,7 +54,7 @@ export const useProductStore = defineStore('products', () => {
   function removeProductFromCart(sku: string) {
     const index = findSkuIndex(sku)
 
-    totalOrderCount.value -= parsedProducts.value[index].quantity
+    totalOrderCount.value -= products.value[index].quantity
 
     products.value[index].selected = false
 
@@ -82,7 +67,6 @@ export const useProductStore = defineStore('products', () => {
 
   return {
     products,
-    parsedProducts,
     totalOrderCount,
     totalOrderPrice,
     addProductToCart,
