@@ -306,9 +306,10 @@ body {
     transform: translateX(0);
   }
 }
-/******************/
+
+/*************/
 /* Order Box */
-/******************/
+/*************/
 
 .order-box {
   flex-basis: 100%;
@@ -361,6 +362,27 @@ body {
   row-gap: 1.5rem;
 }
 
+/*********************/
+/* Order Box Buttons */
+/*********************/
+
+.btn__checkout:hover {
+  background-color: var(--primary-red-hover);
+}
+
+.btn__new-order {
+  margin-top: 1.5rem;
+}
+
+.btn__new-order:hover {
+  background-color: var(--primary-red-hover);
+}
+
+/***************************************/
+/* Selected Product & Calculations:    */
+/* Shared Checkout, Confirmation Styles */
+/***************************************/
+
 .selected-product-list {
   flex-direction: column;
   row-gap: 1rem;
@@ -373,18 +395,14 @@ body {
   padding-bottom: 0.65rem;
 }
 
-.checkout-item-body p,
 .selected-product-body p {
   margin-bottom: 0.25rem;
 }
 
-.checkout-item-data,
 .selected-product-data {
   -moz-column-gap: 0.85rem;
   column-gap: 0.85rem;
 }
-
-/* Shared Checkout, Confirmation Styles */
 
 .selected-product-qty {
   color: var(--primary-red);
@@ -416,7 +434,10 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
 }
-/* End Shared Checkout, Confirmation Styles */
+
+/**********************/
+/* OrderBox: Checkout */
+/**********************/
 
 .selected-product-cancel-icon {
   border: 1px solid var(--rose-300);
@@ -425,39 +446,31 @@ body {
   cursor: pointer;
 }
 
-.checkout--submessage {
+.checkout-eco-msg {
   padding: 1rem 0;
   margin: 1.5rem 0;
   border-radius: 0.25rem;
   background-color: var(--rose-50);
 }
 
-.checkout--submessage p {
+.checkout-eco-msg p {
   text-align: center;
   font-size: 0.875rem;
 }
 
-.checkout--submessage p::before {
+.checkout-eco-msg p::before {
   content: url('/images/icon-carbon-neutral.svg');
   vertical-align: text-top;
   margin-right: 0.25rem;
 }
 
-/*********************/
-/* Order Box Buttons */
-/*********************/
-
-.btn__checkout:hover {
-  background-color: var(--primary-red-hover);
-}
-
-/*********************/
-/* Confirmation Modal */
-/*********************/
+/*******************************/
+/* OrderBox: Confirmation Modal */
+/*******************************/
 
 .confirmation-modal {
   background-color: var(--white);
-  padding: 1.5rem;
+  padding: 0.25rem;
   border-color: transparent;
   border-radius: 0.5rem;
   min-width: 375px;
@@ -483,18 +496,16 @@ body {
   color: var(--rose-500);
 }
 
-.confirmation-modal .checkout-item-body p {
+.confirmation-modal .selected-product-body p {
   color: var(--rose-900);
   margin-bottom: 0;
 }
 
-.confirmation-modal .checkout-panel-active {
+.confirmation-modal .order-box-active {
   row-gap: 0;
 }
 
-.confirmation-modal .checkout-items-list {
-  flex-direction: column;
-  row-gap: 1rem;
+.confirmation-modal .selected-product-list {
   margin-top: 1.5rem;
   background-color: var(--rose-50);
   padding: 1.5rem;
@@ -502,7 +513,7 @@ body {
   border-top-left-radius: 0.5rem;
 }
 
-.confirmation-modal .checkout-items-list li {
+.confirmation-modal .selected-product-list li {
   display: flex;
   border-bottom: 1px solid var(--rose-100);
   padding-bottom: 1rem;
@@ -510,7 +521,11 @@ body {
   column-gap: 0.75rem;
 }
 
-.confirmation-modal .checkout-item {
+.confirmation-modal .selected-product-image-wrapper {
+  flex-basis: 20%;
+}
+
+.confirmation-modal .selected-product {
   border-bottom: unset;
   padding-bottom: 0;
   -moz-column-gap: 0.25rem;
@@ -518,7 +533,7 @@ body {
   flex-basis: 75%;
 }
 
-.confirmation-modal .checkout-item-total-price {
+.confirmation-modal .selected-product-total-price {
   color: var(--rose-900);
 }
 
@@ -533,52 +548,9 @@ body {
   color: var(--rose-900);
 }
 
-.confirmed-items-list {
-  flex-direction: column;
-  row-gap: 1rem;
-  margin-top: 1.5rem;
-  background-color: var(--rose-50);
-  padding: 1.5rem;
-  border-top-right-radius: 0.5rem;
-  border-top-left-radius: 0.5rem;
-}
-
-.confirmed-item {
-  border-bottom: 1px solid var(--rose-100);
-  padding-bottom: 1rem;
-  -moz-column-gap: 0.25rem;
-  column-gap: 0.75rem;
-}
-
-.confirmed-item-image-wrapper {
-  flex-basis: 20%;
-}
-
-.confirmed-item-body-wrapper {
-  flex-basis: 75%;
-}
-
-.confirmed-item-body-wrapper {
-  justify-content: space-between;
-  align-items: center;
-}
-
-.final-calc-content--confirmation {
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--rose-50);
-  padding: 0 1.5rem 1.5rem 1.5rem;
-  border-bottom-right-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-}
-
-.btn__new-order {
-  margin-top: 1.5rem;
-}
-
-.btn__new-order:hover {
-  background-color: var(--primary-red-hover);
-}
+/*********/
+/* Modal */
+/*********/
 
 dialog {
   top: 50%;

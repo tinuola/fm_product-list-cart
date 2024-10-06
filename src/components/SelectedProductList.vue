@@ -24,14 +24,14 @@ const { isConfirmed } = defineProps({
         :total-item-price="product.totalItemPrice"
         :is-confirmed="isConfirmed"
       >
-        <!-- <template v-if="isConfirmed" #slotLeft>
-          <div class="confirmed-item-image-wrapper">
+        <template v-if="isConfirmed" #slotLeft>
+          <div class="selected-product-image-wrapper">
             <img :src="product.image.thumbnail" alt="" />
           </div>
-        </template> -->
+        </template>
 
         <template v-if="isConfirmed" #slotRight>
-          <span class="checkout-item-total-price"
+          <span class="selected-product-total-price"
             ><span>$</span>{{ product.totalItemPrice.toFixed(2) }}</span
           >
         </template>
@@ -51,4 +51,4 @@ const { isConfirmed } = defineProps({
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

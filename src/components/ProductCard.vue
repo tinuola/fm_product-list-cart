@@ -79,4 +79,4 @@ const { category, image, name, price, quantity, sku } = defineProps({
   </li>
 </template>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

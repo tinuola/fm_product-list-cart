@@ -100,7 +100,7 @@ useHead({
           </template>
 
           <template #footer>
-            <div class="checkout--submessage">
+            <div class="checkout-eco-msg">
               <p>
                 This is a
                 <span class="u-font-medium">carbon-neutral</span> delivery
@@ -142,7 +142,7 @@ useHead({
       </div>
 
       <!-- Confirmation Modal -->
-      <!-- <ModalBox ref="dialog-ref" @new-order="startNewOrder" /> -->
+      <ModalBox ref="dialog-ref" @new-order="startNewOrder" />
     </main>
 
     <FooterPrimary />
