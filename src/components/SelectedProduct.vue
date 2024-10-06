@@ -1,5 +1,9 @@
 <script setup>
-const { name, price, quantity, totalItemPrice } = defineProps({
+const { isConfirmed, name, price, quantity, totalItemPrice } = defineProps({
+  isConfirmed: {
+    type: Boolean,
+    default: false
+  },
   name: {
     type: String,
     default: ''
@@ -20,31 +24,29 @@ const { name, price, quantity, totalItemPrice } = defineProps({
 </script>
 
 <template>
-  <div>
-    <li>
-      <slot name="slotLeft"></slot>
+  <li>
+    <slot name="slotLeft"></slot>
 
-      <div class="checkout-item u-flex">
-        <div class="checkout-item-body">
-          <p class="u-font-medium">{{ name }}</p>
-          <div class="checkout-item-data u-flex u-font-medium">
-            <span class="checkout-item-qty"
-              ><span>{{ quantity }}</span
-              >x</span
-            >
-            <span class="checkout-item-price"
-              ><span>@&nbsp;</span> <span>$</span>{{ price.toFixed(2) }}</span
-            >
-            <span class="checkout-item-total-price"
-              ><span>$</span>{{ totalItemPrice.toFixed(2) }}</span
-            >
-          </div>
+    <div class="checkout-item u-flex">
+      <div class="checkout-item-body">
+        <p class="u-font-medium">{{ name }}</p>
+        <div class="checkout-item-data u-flex u-font-medium">
+          <span class="checkout-item-qty"
+            ><span>{{ quantity }}</span
+            >x</span
+          >
+          <span class="checkout-item-price"
+            ><span>@</span> <span>$</span>{{ price.toFixed(2) }}</span
+          >
+          <span v-if="!isConfirmed" class="checkout-item-total-price"
+            ><span>$</span>{{ totalItemPrice.toFixed(2) }}</span
+          >
         </div>
-
-        <slot name="slotRight"></slot>
       </div>
-    </li>
-  </div>
+
+      <slot name="slotRight"></slot>
+    </div>
+  </li>
 </template>
 
 <style lang="scss" scoped></style>
