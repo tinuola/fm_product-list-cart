@@ -16,11 +16,13 @@ Solution to the _[Product List with Cart](https://www.frontendmentor.io/challeng
 
 ### Solution
 
-Live Site: [tinuola.github.io/fm_product-list-cart/](https://tinuola.github.io/fm_product-list-cart/)
+Live Sites: 
+- CDN version: [tinuola.github.io/fm_product-list-cart](https://tinuola.github.io/fm_product-list-cart/) (_Current branch_)
+- Build (SFC) version: [tt-fm-product-list-cart.netlify.app](https://tt-fm-product-list-cart.netlify.app/) (_[Main branch](https://github.com/tinuola/fm_product-list-cart/tree/main)_)
 
 ### Retrospective
 
-- Vue 3 practice with CDN build and Composition API
+- Vue 3 practice using CDN build and Single File Component (App) build; both with Composition API
 - Updated color specs to improve on contrast ratios
 - Mini-utility CSS styles to reduce repeated styles
 
