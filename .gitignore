@@ -32,3 +32,4 @@ Thumbs.db
 *.sw?
 
 *.tsbuildinfo
+vite.config.ts.timestamp-*.mjs
