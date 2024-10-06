@@ -38,7 +38,7 @@ onMounted(() => {
 })
 
 useHead({
-  title: 'Product List with Card - Frontend Mentor Challenge',
+  title: 'Product List with Cart - Frontend Mentor Challenge',
   meta: [
     {
       name: 'description',
