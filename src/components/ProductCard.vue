@@ -54,7 +54,7 @@ const { category, image, name, price, quantity, sku } = defineProps({
           ><img src="/images/icon-decrement-quantity.svg" alt="Decrease quantity by 1"
         /></ButtonPrimary>
 
-        <span class="product-card__selected-qty">{{ quantity }}</span>
+        <span>{{ quantity }}</span>
 
         <ButtonPrimary class="btn__increase-qty" @click="productStore.increaseProductCount(sku)"
           ><img src="/images/icon-increment-quantity.svg" alt="Increase quantity by 1"

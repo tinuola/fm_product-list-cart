@@ -89,7 +89,7 @@ useHead({
         >
           <template #header
             ><h3 class="order-box-title">
-              Your Cart (<span class="checkout__total-qty">{{ productStore.totalOrderCount }}</span
+              Your Cart (<span>{{ productStore.totalOrderCount }}</span
               >)
             </h3></template
           >
@@ -119,20 +119,18 @@ useHead({
         <OrderBox v-else>
           <template #header
             ><h3 class="order-box-title">
-              Your Cart (<span class="checkout__total-qty">{{ productStore.totalOrderCount }}</span
+              Your Cart (<span>{{ productStore.totalOrderCount }}</span
               >)
             </h3></template
           >
           <template #body>
             <div class="order-box-empty">
-              <div class="checkout-panel-empty-image-wrapper">
-                <img
-                  src="/images/illustration-empty-cart.svg"
-                  alt="Cake with a slice removed"
-                  width="128"
-                  height="128"
-                />
-              </div>
+              <img
+                src="/images/illustration-empty-cart.svg"
+                alt="Cake with a slice removed"
+                width="128"
+                height="128"
+              />
               <p>Your added items will appear here.</p>
             </div>
           </template>
