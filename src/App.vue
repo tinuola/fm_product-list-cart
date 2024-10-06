@@ -5,6 +5,7 @@ import { useProductStore } from '@/stores/ProductStore'
 
 // Components
 import ButtonPrimary from '@/components/ButtonPrimary.vue'
+import FooterPrimary from '@/components/FooterPrimary.vue'
 import ModalBox from '@/components/ModalBox.vue'
 import OrderBox from '@/components/OrderBox.vue'
 import ProductCard from '@/components/ProductCard.vue'
@@ -150,7 +151,7 @@ useHead({
       <ModalBox ref="dialog-ref" @new-order="startNewOrder" />
     </main>
 
-    <footer></footer>
+    <FooterPrimary />
   </div>
 </template>
 
