@@ -52,11 +52,11 @@ const productStore = useProductStore()
     <div class="product-card-btns-group">
       <!-- Select quantity -->
       <div v-if="quantity" class="btn btn--sm btn__quantity u-font-medium u-flex">
-        <ButtonPrimary class="btn__decrease-qty"
+        <ButtonPrimary class="btn__decrease-qty" @click="productStore.decreaseProductCount(sku)"
           ><img src="/images/icon-decrement-quantity.svg" alt="Decrease quantity by 1"
         /></ButtonPrimary>
         <span class="product-card__selected-qty">{{ quantity }}</span>
-        <ButtonPrimary class="btn__increase-qty"
+        <ButtonPrimary class="btn__increase-qty" @click="productStore.increaseProductCount(sku)"
           ><img src="/images/icon-increment-quantity.svg" alt="Increase quantity by 1"
         /></ButtonPrimary>
       </div>

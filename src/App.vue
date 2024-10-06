@@ -6,7 +6,6 @@ import ProductCard from './components/ProductCard.vue'
 
 const productStore = useProductStore()
 const products = productStore.products
-// const totalOrderCount = ref(0)
 const dialogRef = ref<HTMLDialogElement | null>(null)
 
 onMounted(() => {
@@ -14,46 +13,6 @@ onMounted(() => {
 })
 
 // METHODS
-// function addProductToCart(index) {
-//   products.value[index].selected = true
-//   products.value[index].quantity = 1
-//   totalOrderCount.value++
-// }
-
-// function increaseProductCount(idx) {
-//   products.value[idx].quantity++
-//   recalculatePrice(idx)
-//   totalOrderCount.value++
-// }
-
-// function decreaseProductCount(idx) {
-//   products.value[idx].quantity--
-//   recalculatePrice(idx)
-//   totalOrderCount.value--
-
-//   // Trigger removal of 'selected' class
-//   if (products.value[idx].quantity === 0) {
-//     products.value[idx].selected = false
-//   }
-// }
-
-// function recalculatePrice(idx) {
-//   return (products.value[idx].totalItemPrice =
-//     products.value[idx].quantity * products.value[idx].price)
-// }
-
-// function removeProductFromCart(idx, itemId) {
-//   const skuIndex = products.value.findIndex(
-//     (prodObj) => prodObj.sku === itemId
-//   )
-
-//   totalOrderCount.value -= parsedProducts.value[idx].quantity
-
-//   products.value[skuIndex].selected = false
-
-//   products.value[skuIndex].quantity = 0
-// }
-
 // function confirmOrder() {
 //   dialogRef.value.showModal()
 // }
