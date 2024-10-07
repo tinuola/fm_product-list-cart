@@ -22,14 +22,7 @@ function confirmOrder() {
 }
 
 function startNewOrder() {
-  // Reset app data
-  productStore.products.forEach((obj) => {
-    obj.selected = false
-    obj.quantity = 0
-  })
-
-  productStore.totalOrderCount = 0
-
+  productStore.resetStore()
   dialogRef.value?.close()
 }
 
