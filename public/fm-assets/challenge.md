@@ -1,3 +1,5 @@
+**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+
 ## The Challenge
 
 Your challenge is to build out this product list project that includes a functional cart and get it looking as close to the design as possible.
